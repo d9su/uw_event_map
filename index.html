@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UW Map</title>
+		<link href="./css/style.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class='content_container'>
+			<div class='left_sidepanel'>
+				<ul class='filter_list'>
+					<li class='filter'>
+						MathSoc
+					</li>
+					<li class='filter'>
+						CS Club
+					</li>
+					<li class='filter'>
+						Career Center
+					</li>
+				</ul>
+				<div class='create_event'>Create Event</div>
+			</div>
+			<div id='map_canvas'></div>
+		</div>
+
+		<div class='event_form_bubble'>
+			<form class='event_form'>
+				<input class='desc_active' type='text' name='event_title' value='Event name'>
+				<textarea class='desc_active'>Event description</textarea>
+				<input class='desc_active' type='text' name='event_tag' value='Event tags'>
+				<div class='buttons'>
+					<input class='cancel' type='submit' value='Cancel'>
+					<input class='submit' type='submit' value='Publish'>
+				</div>
+
+			</form>
+		</div>
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="./js/underscore-min.js"></script>
+		<script type="text/javascript" src="./js/backbone-min.js"></script>
+		<script type="text/javascript" src="./js/map.js"></script>
+	</body>
+
+
+</html>
