@@ -14,12 +14,17 @@ input, textarea {
 .filter + .filter { margin-top: 6px; }
 .create_event { color: #f8f8f8; padding: 10px 0; border: 1px solid #3071dd; border-radius: 7px; background-color: #3071dd; cursor: pointer; }
 
-.event_form_bubble { display: none; position: fixed; left: 50%; top: 50%; margin-left: -180px; margin-top: -180px; width: 360px; height: 360px; border-radius: 180px; border: 1px solid #a3a3a3; background: #fff;
+.event_form_bubble { display: none; position: fixed; left: 50%; top: 50%; margin-left: -180px; margin-top: -180px; width: 360px; height: 360px; border-radius: 180px; border: 1px solid #a3a3a3; background-color: #fff;
+	/*background-image: url('../img/game_bg.png') ;*/
 	-webkit-transition: all 0.8s ease;
  	-mox-transition: all 0.8s ease;
  	-o-transition: all 0.8s ease;
  	-ms-transition: all 0.8s ease;
 }
+.event_form .icon_selection label { font-size: 0.9em; float: left; }
+.event_form .icon_selection select { font-size: 0.9em; float: right; }
+select option { background-repeat:no-repeat; background-position:bottom left; padding-left:30px; }
+select .info { background-image: url('../img/info_icon.png');}
 .event_form { position: relative; left: 80px; top: 60px; width: 200px; }
 .event_form input[type=text] { display: block; width: 194px; margin-bottom: 10px; }
 .event_form textarea { display: block; min-width: 194px; max-width: 194px; min-height: 150px; max-height: 150px; margin-bottom: 10px; }
