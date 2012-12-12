@@ -25,15 +25,10 @@
 		</div>
 
 		<div class='event_form_bubble'>
+			<div class='marker_bg bg_info'></div>
 			<form class='event_form'>
 				<div class='icon_selection'>
-					<label>Event Type</label> 
-					<select>
-						<option class='info' value="info">Info</option>
-						<option class='game' value="game">Game</option>
-						<option class='social' value="social">Social</option>
-						<option class='workshop' value="workshop">Workshop</option>
-					</select>
+					<div class='event_type type_reselect icon_info'><span>Info Session</span></div>
 					<div class='clearfix'></div>
 				</div>
 				<input class='desc_active' type='text' name='event_title' value='Event name'>
@@ -45,6 +40,14 @@
 				</div>
 
 			</form>
+		</div>
+
+		<div class='event_icon_selection'>
+			<div class='event_type type_select icon_info' id='info'><span>Info Session</span></div>
+			<div class='event_type type_select icon_game' id='game'><span>Game</span></div>
+			<div class='event_type type_select icon_social' id='social'><span>Social</span></div>
+			<div class='event_type type_select icon_food' id='food'><span>Refreshment</span></div>
+			<div class='event_type type_select icon_workshop' id='workshop'><span>Workshop</span></div>
 		</div>
 
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>

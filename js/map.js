@@ -1,5 +1,14 @@
 (function($){
 
+	// Model
+	var NewEvent = Backbone.Model.extend({
+		defaults: {
+			event_type: 'info'
+		},
+	});
+
+	var new_event = new NewEvent();
+
 	// Globals
 	var _map;
 	var _uw = new google.maps.LatLng(43.470012, -80.542749);
@@ -8,6 +17,16 @@
 		new google.maps.LatLng(43.479993, -80.534935)
 		);
 	var _place_marker = false;
+
+	// Customized Marker Images
+	var pin_size = new google.maps.Size(26, 33);
+	var pin_origin = new google.maps.Point(0,0);
+	var pin_anchor = new google.maps.Point(0, 16.5);
+	var info_pin = new google.maps.MarkerImage('./img/info_pin.png', pin_size, pin_origin, pin_anchor);
+	var game_pin = new google.maps.MarkerImage('./img/game_pin.png', pin_size, pin_origin, pin_anchor);
+	var social_pin = new google.maps.MarkerImage('./img/social_pin.png', pin_size, pin_origin, pin_anchor);
+	var food_pin = new google.maps.MarkerImage('./img/food_pin.png', pin_size, pin_origin, pin_anchor);
+	var workshop_pin = new google.maps.MarkerImage('./img/workshop_pin.png', pin_size, pin_origin, pin_anchor);
 
 	// Create map
 	function initialize() {
@@ -58,9 +77,14 @@
 
 		} else {
 			_place_marker = false;
+			var types = ['info', 'game', 'social', 'food', 'workshop'];
+			var pins = [info_pin, game_pin, social_pin, food_pin, workshop_pin];
+			var img = pins[$.inArray(new_event.get('event_type'), types)];
+
 			var flag = new google.maps.Marker({
 				position: location,
 				map: _map,
+				icon: img,
 				animation: google.maps.Animation.DROP
 			});
 			return; 
@@ -90,10 +114,23 @@
 	$('.submit').click(function(){
 		$('.event_form_bubble').css('-webkit-transform', 'scale(0.1)');
 		$('.event_form').fadeOut(500);
-		$('.event_form_bubble').animate({top: '-200px'}, 500, function(){
+		$('.marker_bg').fadeIn(500);
+		$('.event_form_bubble').animate({top: '-300px'}, 500, function(){
 			_place_marker = true;
 		});
 		return false;
 	});
+
+	$('.type_reselect').click(function(){
+		$('.event_icon_selection').show();
+	});
+
+	$('.type_select').click(function(){
+		$('.marker_bg').removeClass('bg_'+new_event.get('event_type'));
+		new_event.set({event_type: $(this).attr('id')});
+		$('.marker_bg').addClass('bg_'+new_event.get('event_type'));
+		$('.event_icon_selection').hide();
+	});
+
 
 })(jQuery);

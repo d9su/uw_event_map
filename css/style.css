@@ -1,4 +1,4 @@
-body { background-color: #ccc; text-align: center; font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+body { background-color: #ccc; font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 input, textarea { 
 	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif; 
 	border-radius: 4px;
@@ -15,7 +15,7 @@ input, textarea {
 }
 
 .content_container { width: 99%; min-width: 960px; margin: 0 auto; height: 700px; }
-.left_sidepanel { display: inline-block; width: 200px; vertical-align: top; padding: 0 8px; }
+.left_sidepanel { display: inline-block; width: 200px; vertical-align: top; padding: 0 8px; text-align: center; }
 #map_canvas { height: 700px; display: inline-block; min-width: 750px; width: 75%; vertical-align: top; }
 
 .filter_list { list-style-type: none; padding: 0; margin: 0; height: 660px; }
@@ -30,14 +30,27 @@ input, textarea {
  	-o-transition: all 0.8s ease;
  	-ms-transition: all 0.8s ease;
 }
-.event_form .icon_selection label { font-size: 0.9em; float: left; }
-.event_form .icon_selection select { font-size: 0.9em; float: right; }
-select option { background-repeat:no-repeat; background-position:bottom left; padding-left:30px; }
-select .info { background-image: url('../img/info_icon.png');}
+
+.marker_bg { background-repeat:no-repeat; display: none; width: 360px; height: 360px; position: absolute; }
+.marker_bg.bg_info { background-image: url('../img/info_bg.png');}
+.marker_bg.bg_game { background-image: url('../img/game_bg.png');}
+.marker_bg.bg_social { background-image: url('../img/social_bg.png');}
+.marker_bg.bg_food { background-image: url('../img/food_bg.png');}
+.marker_bg.bg_workshop { background-image: url('../img/workshop_bg.png');}
+
+.event_type { background-repeat:no-repeat; background-position:bottom left; padding-left: 30px; height: 26px; cursor: pointer; }
+.event_type span { line-height: 26px; }
+.event_type.icon_info { background-image: url('../img/info_icon.png');}
+.event_type.icon_game { background-image: url('../img/game_icon.png');}
+.event_type.icon_social { background-image: url('../img/social_icon.png');}
+.event_type.icon_food { background-image: url('../img/food_icon.png');}
+.event_type.icon_workshop { background-image: url('../img/workshop_icon.png');}
 .event_form { position: relative; left: 80px; top: 60px; width: 200px; }
 .event_form input[type=text] { display: block; width: 194px; margin-bottom: 10px; }
 .event_form textarea { display: block; min-width: 194px; max-width: 194px; min-height: 150px; max-height: 150px; margin-bottom: 10px; }
 .event_form .cancel { float: left; }
 .event_form .submit { float: right; }
 .desc_active { color: #8f8f8f; }
+
+.event_icon_selection { display: none; position: absolute; top: 50%; left: 50%; border: 1px solid #ccc; background-color: #fff; }
 
