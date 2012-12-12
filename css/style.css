@@ -16,7 +16,7 @@ input, textarea {
 
 .content_container { width: 99%; min-width: 960px; margin: 0 auto; height: 700px; }
 .left_sidepanel { display: inline-block; width: 200px; vertical-align: top; padding: 0 8px; text-align: center; }
-#map_canvas { height: 700px; display: inline-block; min-width: 750px; width: 75%; vertical-align: top; }
+#map_canvas { height: 700px; display: inline-block; min-width: 750px; width: 75%; vertical-align: top; cursor: default; }
 
 .filter_list { list-style-type: none; padding: 0; margin: 0; height: 660px; }
 .filter { color: #f8f8f8; padding: 10px 0; border: 1px solid #3071dd; border-radius: 7px; background-color: #3071dd; cursor: pointer; }
@@ -26,7 +26,7 @@ input, textarea {
 .event_form_bubble { display: none; position: fixed; left: 50%; top: 50%; margin-left: -180px; margin-top: -180px; width: 360px; height: 360px; border-radius: 180px; border: 1px solid #a3a3a3; background-color: #fff;
 	/*background-image: url('../img/game_bg.png') ;*/
 	-webkit-transition: all 0.8s ease;
- 	-mox-transition: all 0.8s ease;
+ 	-moz-transition: all 0.8s ease;
  	-o-transition: all 0.8s ease;
  	-ms-transition: all 0.8s ease;
 }
