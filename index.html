@@ -27,13 +27,22 @@
 		<div class='event_form_bubble'>
 			<div class='marker_bg bg_info'></div>
 			<form class='event_form'>
-				<div class='icon_selection'>
-					<div class='event_type type_reselect icon_info'><span>Info Session</span></div>
-					<div class='clearfix'></div>
+				<label for='event_name'>Event Name</label>
+				<div class='name_icon'>
+					<div class='name'>
+						<input type='text' name='event_name' id='event_name' value=''>
+					</div>
+					<div class='icon'>
+						<div class='event_type icon_info' id='choose_event_icon'></div>
+					</div>
 				</div>
-				<input class='desc_active' type='text' name='event_title' value='Event name'>
-				<textarea class='desc_active' name='event_desc'>Event description</textarea>
-				<input class='desc_active' type='text' name='event_tag' value='Event tags'>
+
+				<label for='event_desc'>Event Description</label>
+				<textarea name='event_desc' id='event_desc'></textarea>
+
+				<label for='event_tag'>Event Tags</label>
+				<input type='text' name='event_tag' id='event_tag' value=''>
+
 				<div class='buttons'>
 					<input class='cancel' type='submit' value='Cancel'>
 					<input class='submit' type='submit' value='Publish'>
@@ -44,7 +53,7 @@
 
 		<div class='event_icon_selection'>
 			<div class='event_type type_select icon_info' id='info'><span>Info Session</span></div>
-			<div class='event_type type_select icon_game' id='game'><span>Game</span></div>
+			<div class='event_type type_select icon_game' id='game'><span>Entertainment</span></div>
 			<div class='event_type type_select icon_social' id='social'><span>Social</span></div>
 			<div class='event_type type_select icon_food' id='food'><span>Refreshment</span></div>
 			<div class='event_type type_select icon_workshop' id='workshop'><span>Workshop</span></div>

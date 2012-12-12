@@ -1,24 +1,95 @@
 (function($){
 
+	// ====================
 	// Model
-	var NewEvent = Backbone.Model.extend({
+	// ====================
+
+	// Model of the newly created event
+	var Event = Backbone.Model.extend({
 		defaults: {
 			id: 			null,
 			event_type: 	'info',
 			event_id: 		0,
-			event_title: 	'',
+			event_name: 	'',
 			event_desc: 	'',
-			event_tag: 		[]
+			event_tag: 		[],
 		},
 
 		resetContent: function() {
 			this.set(this.defaults);
+		},
+
+		getEventNameByType: function(type) {
+			var types = ['info', 'game', 'social', 'food', 'workshop'];
+			var names = ['Info Session', 'Entertainment', 'Social', 'Refreshment', 'Workshop'];
+			if ($.inArray(type, types) == -1)
+				return 'Unknown';
+			else
+				return names[$.inArray(type, types)];
+		},
+
+		getCurrentEventName: function() {
+			return this.getEventNameByType(this.get('event_type'));
 		}
+
 	});
 
-	var new_event = new NewEvent();
+	// Instantiation
+	var _event = new Event();
 
-	// Globals
+
+	// ====================
+	// View
+	// ====================
+
+	// View of new event (event_form)
+	var EventForm = Backbone.View.extend({
+		initialize: function() {
+			_.bindAll(this, 'updateIcon', 'resetForm');
+			this.el = $('.event_form_bubble');
+			this.model = _event;
+			this.model.bind('change:event_type', this.updateIcon, this);
+			this.model.bind('change:id', this.resetForm, this);
+		},
+
+		updateIcon: function() {
+			// change backgound of the form
+			this.el.find('.marker_bg').removeClass('bg_'+this.model.previous('event_type'));
+			this.el.find('.marker_bg').addClass('bg_'+this.model.get('event_type'));
+
+			// change the event icon
+			this.el.find('.event_type').removeClass('icon_'+this.model.previous('event_type'));
+			this.el.find('.event_type').addClass('icon_'+this.model.get('event_type'));
+
+			// update text
+			// this.el.find('.event_type span').text(this.model.getCurrentEventName());
+		},
+
+		resetForm: function() {
+			if (this.model.get('id') != null)
+				return;
+
+			this.el.find('.marker_bg').hide();
+			this.el.find('.event_form').show();
+			this.el.hide();
+			this.el.css('border-radius' , '10px');
+			this.el.css('-webkit-transform', 'scale(1.0)');
+			this.el.css('-moz-transform', 'scale(1.0)');
+			this.el.css('-o-transform', 'scale(1.0)');
+			this.el.css('-ms-transform', 'scale(1.0)');
+			this.el.css('left', '50%');
+			this.el.css('top', '50%');
+		}
+
+	});
+	
+	// Instantiation
+	var _event_form = new EventForm();
+
+
+	// ====================
+	// Globals for google map
+	// ====================
 	var _map;
 	var _uw = new google.maps.LatLng(43.470012, -80.542749);
 	var _map_bound = new google.maps.LatLngBounds(
@@ -37,7 +108,12 @@
 	var food_pin = new google.maps.MarkerImage('./img/food_pin.png', pin_size, pin_origin, pin_anchor);
 	var workshop_pin = new google.maps.MarkerImage('./img/workshop_pin.png', pin_size, pin_origin, pin_anchor);
 
-	// Create map
+
+	// ====================
+	// Map
+	// ====================
+
+	// Render map
 	function initialize() {
 		// set up options
 		var map_options = {
@@ -58,7 +134,7 @@
 		google.maps.event.addListener(_map, 'click', function(event){placeEventFlag(event.latLng)});
 	}
 
-
+	// Restrict bounds
 	function checkBounds() {    
 	    if(! _map_bound.contains(_map.getCenter())) {
 	      var map_center = _map.getCenter();
@@ -79,7 +155,7 @@
 	    }
 	}
 
-
+	// Drop a pin at specified location
 	function placeEventFlag(location) {
 		if (!_place_marker) {
 			return;
@@ -88,8 +164,8 @@
 			_place_marker = false;
 			var types = ['info', 'game', 'social', 'food', 'workshop'];
 			var pins = [info_pin, game_pin, social_pin, food_pin, workshop_pin];
-			var img = pins[$.inArray(new_event.get('event_type'), types)];
-			var id = new_event.get('event_id')+'';
+			var img = pins[$.inArray(_event.get('event_type'), types)];
+			var id = _event.get('event_id')+'';	// make sure id is converted to a string otherwise google's MarkerOptions would complaint
 			var flag = new google.maps.Marker({
 				title: id,
 				position: location,
@@ -99,10 +175,12 @@
 			});
 
 			var info = 
-					'<h2>'+new_event.get('event_title')+'</h2>\
-					<p>'+new_event.get('event_desc')+'</p>\
-					';
+					'<div class="info_box">\
+						<h2>'+_event.get('event_name')+'</h2>\
+						<p>'+_event.get('event_desc')+'</p>\
+					</div>';
 
+			// add listener to display info box
 			google.maps.event.addListener(flag, 'click', function() {
 				var info_box = new google.maps.InfoWindow({
 					content: info,
@@ -110,20 +188,22 @@
 				});
 				info_box.open(_map, flag);
 			});
+
+			// Reset the event model once everything is done
+			_event.resetContent();
 			return; 
 		}
 	}
 
+	// Load the map once the page is loaded
 	google.maps.event.addDomListener(window, 'load', initialize);
 
 
-	// Create event
+	// ====================
+	// Click Handlers
+	// ====================
 	$('.create_event').click(function(){
 		$('.event_form_bubble').show();
-	});
-
-	$('.desc_active').live('click', function(){
-		$(this).removeClass('desc_active').val('');
 	});
 
 	$('.cancel').click(function(){
@@ -134,6 +214,15 @@
 	});
 
 	$('.submit').click(function(){
+		// Save info into model
+		var event_name = $('.event_form input[name=event_name]').val();
+		var event_desc = $('.event_form textarea[name=event_desc]').val();
+		_event.set({
+			id: 1,
+			event_name: event_name,
+			event_desc: event_desc
+		});
+
 		// Shrink the bubble and fade out form/fade in background icon
 		$('.event_form_bubble').css('-webkit-transform', 'scale(0.1)');
 		$('.event_form_bubble').css('-moz-transform', 'scale(0.1)');
@@ -141,29 +230,20 @@
 		$('.event_form_bubble').css('-ms-transform', 'scale(0.1)');
 		$('.event_form').fadeOut(500);
 		$('.marker_bg').fadeIn(500);
+		$('.event_form_bubble').animate({'border-radius': '180px'}, 100);
 		$('.event_form_bubble').animate({top: '-300px'}, 500, function(){
 			_place_marker = true;
-		});
-
-		// Save info into model
-		var event_title = $('.event_form input[name=event_title]').val();
-		var event_desc = $('.event_form textarea[name=event_desc]').val();
-		new_event.set({
-			event_title: event_title,
-			event_desc: event_desc
 		});
 
 		return false;
 	});
 
-	$('.type_reselect').click(function(){
+	$('#choose_event_icon').click(function(){
 		$('.event_icon_selection').show();
 	});
 
 	$('.type_select').click(function(){
-		$('.marker_bg').removeClass('bg_'+new_event.get('event_type'));
-		new_event.set({event_type: $(this).attr('id')});
-		$('.marker_bg').addClass('bg_'+new_event.get('event_type'));
+		_event.set({event_type: $(this).attr('id')});
 		$('.event_icon_selection').hide();
 	});
 
