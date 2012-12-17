@@ -1,0 +1,31 @@
+.event_form_bubble
+	.marker_bg.bg_info
+	form.event_form
+		label(for='event_name') Event Name
+		.name_icon
+			.name
+				input(type='text', name='event_name', id='event_name', value='')
+			.icon
+				#choose_event_icon.event_type.icon_info
+
+		label(for='event_desc') Event Description
+		textarea#event_desc(name='event_desc')
+
+		label(for='event_tag')Event Tags
+		input(type='text', name='event_tag', id='event_tag', value='')
+
+		.buttons
+			input.cancel(type='submit', value='Cancel')
+			input.submit(type='submit', value='Publish')
+
+.event_icon_selection
+	.event_type.type_select.icon_info#info
+		span Info Session
+	.event_type.type_select.icon_info#game
+		span Entertainment
+	.event_type.type_select.icon_info#social
+		span Social
+	.event_type.type_select.icon_info#food
+		span Refreshment
+	.event_type.type_select.icon_info#workshop
+		span Workshop

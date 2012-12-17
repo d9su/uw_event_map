@@ -1,0 +1,185 @@
+body {
+  background-color: #ccc;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+input,
+textarea {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  border-radius: 4px;
+}
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+.content_container {
+  width: 99%;
+  min-width: 960px;
+  margin: 0 auto;
+  height: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.left_sidepanel {
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+  padding: 0 8px;
+  text-align: center;
+}
+#map_canvas {
+  height: 700px;
+  display: inline-block;
+  min-width: 750px;
+  width: 75%;
+  vertical-align: top;
+  cursor: default;
+}
+.filter_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 660px;
+}
+.filter {
+  color: #f8f8f8;
+  padding: 10px 0;
+  border: 1px solid #3071dd;
+  border-radius: 7px;
+  background-color: #3071dd;
+  cursor: pointer;
+}
+.filter + .filter {
+  margin-top: 6px;
+}
+.create_event {
+  color: #f8f8f8;
+  padding: 10px 0;
+  border: 1px solid #3071dd;
+  border-radius: 7px;
+  background-color: #3071dd;
+  cursor: pointer;
+}
+.event_form_bubble {
+/*display: none;*/
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -180px;
+  margin-top: -180px;
+  width: 360px;
+  height: 360px;
+  border-radius: 10px;
+  border: 1px solid #a3a3a3;
+  background-color: #fff;
+/*background-image: url('../img/game_bg.png') ;*/
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+}
+.marker_bg {
+  background-repeat: no-repeat;
+  display: none;
+  width: 360px;
+  height: 360px;
+  position: absolute;
+}
+.marker_bg.bg_info {
+  background-image: url("../img/info_bg.png");
+}
+.marker_bg.bg_game {
+  background-image: url("../img/game_bg.png");
+}
+.marker_bg.bg_social {
+  background-image: url("../img/social_bg.png");
+}
+.marker_bg.bg_food {
+  background-image: url("../img/food_bg.png");
+}
+.marker_bg.bg_workshop {
+  background-image: url("../img/workshop_bg.png");
+}
+.event_type {
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  padding-left: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+.event_type span {
+  line-height: 26px;
+}
+.event_type.icon_info {
+  background-image: url("../img/info_icon.png");
+}
+.event_type.icon_game {
+  background-image: url("../img/game_icon.png");
+}
+.event_type.icon_social {
+  background-image: url("../img/social_icon.png");
+}
+.event_type.icon_food {
+  background-image: url("../img/food_icon.png");
+}
+.event_type.icon_workshop {
+  background-image: url("../img/workshop_icon.png");
+}
+.event_form {
+  width: 80%;
+  height: 80%;
+  margin: 10% auto;
+}
+.event_form .name_icon .name {
+  display: inline-block;
+  width: 85%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.event_form .name_icon .icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.event_form label {
+  display: block;
+  color: #2c2c2c;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+.event_form input[type=text] {
+  display: block;
+  width: 98%;
+  line-height: 15px;
+  height: 18px;
+}
+.event_form textarea {
+  display: block;
+  min-width: 98%;
+  max-width: 98%;
+  min-height: 100px;
+  max-height: 100px;
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+.event_form .cancel {
+  float: left;
+}
+.event_form .submit {
+  float: right;
+}
+.event_icon_selection {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+.info_box {
+  text-align: left;
+}
