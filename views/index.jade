@@ -1,0 +1,22 @@
+extends layout
+
+block script
+	script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false')
+	script(src='/js/map.js')
+
+block content
+	.content_container
+		.left_sidepanel
+			.filter_list
+				li.filter Math Soc
+				li.filter CS Club
+				li.filter Career Center
+
+			.create_event Creat Event
+
+		#map_canvas(ng-controller='MapController')
+
+	include event-form-bubble
+
+
+	

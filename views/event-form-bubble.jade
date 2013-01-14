@@ -1,31 +1,26 @@
-.event_form_bubble
-	.marker_bg.bg_info
-	form.event_form
+.event_form_bubble(bubble-form, ng-controller='CreateEventController')
+	.marker_bg.bg_info 
+	form.event_form(ng-submit='createEvent()')
 		label(for='event_name') Event Name
 		.name_icon
 			.name
-				input(type='text', name='event_name', id='event_name', value='')
+				input(type='text', name='event_name', id='event_name', value='', ng-model='eventDetail.name')
 			.icon
 				#choose_event_icon.event_type.icon_info
+			//- select.event_icon_selection
+			//- 	option(data-image='../img/info_icon.png', ng-click='setEventType("info")') Info Session
+			//- 	option(data-image='../img/game_icon.png', ng-click='setEventType("game")') Entertainment
+			//- 	option(data-image='../img/social_icon.png', ng-click='setEventType("social")') Social
+			//- 	option(data-image='../img/food_icon.png', ng-click='setEventType("food")') Refreshment
+			//- 	option(data-image='../img/workshop_icon.png', ng-click='setEventType("workshop")') Workshop
 
 		label(for='event_desc') Event Description
-		textarea#event_desc(name='event_desc')
+		textarea#event_desc(name='event_desc', ng-model='eventDetail.desc')
 
-		label(for='event_tag')Event Tags
+		label(for='event_tag') Event Tags
 		input(type='text', name='event_tag', id='event_tag', value='')
 
 		.buttons
-			input.cancel(type='submit', value='Cancel')
+			button.cancel Cancel
 			input.submit(type='submit', value='Publish')
 
-.event_icon_selection
-	.event_type.type_select.icon_info#info
-		span Info Session
-	.event_type.type_select.icon_info#game
-		span Entertainment
-	.event_type.type_select.icon_info#social
-		span Social
-	.event_type.type_select.icon_info#food
-		span Refreshment
-	.event_type.type_select.icon_info#workshop
-		span Workshop

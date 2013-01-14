@@ -64,7 +64,7 @@ textarea {
   cursor: pointer;
 }
 .event_form_bubble {
-/*display: none;*/
+  display: none;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -173,12 +173,10 @@ textarea {
   float: right;
 }
 .event_icon_selection {
-  display: none;
+  width: 250px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 1px solid #ccc;
-  background-color: #fff;
+  top: 50px;
+  right: 50px;
 }
 .info_box {
   text-align: left;

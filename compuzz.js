@@ -1,14 +1,14 @@
-
 /**
- * Module dependencies.
+ * Module dependencies
  */
-
 var express = require('express')
-  , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
-var home = require('./routes/home');
+  
 
+/**
+ * Server config
+ */
 var app = express();
 
 app.configure(function(){
@@ -30,16 +30,13 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+// Include routes
+require('./routes')(app);
 
-// ==========
-// Routes
-// ==========
-// Home page
-app.get('/', home.gethome);
 
-//
-app.get('/users', user.list);
-
+/**
+ * Start server
+ */
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });

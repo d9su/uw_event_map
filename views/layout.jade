@@ -1,11 +1,16 @@
 doctype 5
-html
+html(ng-app='compuzz')
 	head
 		title= title
 		link(rel='stylesheet', href='/css/style.css')
-		script(src='/js/jquery-1.8.3.min.js')
-		script(src='/js/underscore-min.js')
-		script(src='/js/backbone-min.js')
+		link(rel='stylesheet', href='/package/ms_dropdown/css/msdropdown/dd.css')
+		script(src='/js/lib/jquery-1.8.3.min.js')
+		script(src='/package/ms_dropdown/js/msdropdown/jquery.dd.min.js')
+		script(src='/js/lib/angular.min.js')
+		script(src='/js/app.js')
+		script(src='/js/controllers.js')
+		script(src='/js/services.js')
+		script(src='/js/directives.js')
 
 	body
 		block content
