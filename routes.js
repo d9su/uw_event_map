@@ -4,6 +4,7 @@
 var mainHandler = require('./routes/mainHandler');
 var user = require('./routes/user');
 var eventInfoHandler = require('./routes/eventInfoHandler');
+var database = require('./routes/database')
 
 /**
  * Routes
@@ -12,6 +13,9 @@ var eventInfoHandler = require('./routes/eventInfoHandler');
 
  	// Home page
 	app.get('/', mainHandler.getIndex);
+
+	// Fetch tags
+	app.get('/tags', database.fetchTags);
 
 	// TODO: User signup and login
 	app.get('/users', user.list);

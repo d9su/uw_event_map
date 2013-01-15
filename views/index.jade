@@ -5,15 +5,27 @@ block script
 	script(src='/js/map.js')
 
 block content
-	.content_container
-		.left_sidepanel
-			.filter_list
-				li.filter Math Soc
-				li.filter CS Club
-				li.filter Career Center
+	.container
+		.navbar(ng-controller='NavBarController')
+			.navbar-inner
+				.btn-group.pull-left(navbar-btn-group)
+					button.btn.btn-primary.create-event Create Event
+					button.btn.btn-primary.dropdown-toggle(data-toggle='dropdown', href='#')
+						span.caret
+					ul.dropdown-menu
+						li 
+							a.create-event Create Event
+						li 
+							a.edit-event Edit My Events
 
-			.create_event Creat Event
+				form.navbar-form.pull-right
+					input.span9(tag-search, ng-model='matchString', type='text', placeHolder='Search for Tags')
 
+	.container
+		//- .left_sidepanel(ng-controller='TagListController')
+		//- 	ul.filter_list
+		//- 		li.filter(ng-repeat='tag in tags') {{tag.tag_name}}
+		//- 	.create_event Creat Event
 		#map_canvas(ng-controller='MapController')
 
 	include event-form-bubble

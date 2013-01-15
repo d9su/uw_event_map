@@ -15,7 +15,7 @@ angular.module('mapFilters', []).filter('icon', function(){
 });
 
 /* App Module */
-angular.module('compuzz', ['mapFilters', 'compuzzControllers', 'compuzzServices', 'compuzzDirectives']);
+angular.module('compuzz', ['compuzzControllers', 'compuzzServices', 'compuzzDirectives']);
 
 // compuzz.config(['$routeProvider', function($routeProvider) {
 //  	$routeProvider.

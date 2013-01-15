@@ -35,15 +35,26 @@ angular.module('compuzzDirectives', []).
 					el.css('top', '50%');
 				}
 			}, true);
-		}
+		};
 
-		return linkFn
+		return linkFn;
 	}]).
 
-	directive('imgDropdown', function(){
+	directive('navbarBtnGroup', function() {
 		var linkFn = function(scope, el, attr) {
+			el.find('.create-event').click(function(){
+				$('.event_form_bubble').show();
+			});
+		};
 
-		}
+		return linkFn;
+	}).
+
+	directive('tagSearch', function() {
+		var linkFn = function(scope, el, attr) {
+			el.keyup(function(){scope.searchTag();});
+		};
 
 		return linkFn;
 	});
+

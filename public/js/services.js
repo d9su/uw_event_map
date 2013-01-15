@@ -1,6 +1,17 @@
 'use strict';
 
-angular.module('compuzzServices', []).
+angular.module('compuzzServices', ['ngResource']).
+	service('dbService', function($resource){
+		var tagResources = $resource('/tags', {}, {
+			getTags: { method: 'GET', isArray: true },
+			// matchTags: { method: 'GET', params: {}, isArray: true }
+		});
+
+		return {
+			tag: tagResources
+		}
+
+	}).
 
 	service('createEventService', ['$rootScope', function($rootScope){
 		var readyToPin = false;
