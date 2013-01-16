@@ -26,7 +26,16 @@ angular.module('compuzzControllers', []).
 	controller('CreateEventController', ['$scope', 'createEventService',
 		function($scope, newEvent){
 			$scope.newEvent = newEvent;
-			$scope.eventDetail = { name: "", desc: "", type: "info", tags: [] };
+			$scope.eventDetail = { name: '', desc: '', type: 'info', tags: [] };
+			$scope.remaining = function() {
+				var msg = '';
+				var remainingChars = 250 - $scope.eventDetail.desc.length;
+				if (remainingChars == 1)
+					msg = 'character left';
+				else
+					msg = 'characters left';
+				return remainingChars + ' ' + msg;
+			}
 
 			$scope.createEvent = function() {
 				// Add additional form validation if necessary

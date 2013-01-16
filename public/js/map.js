@@ -27,10 +27,6 @@
 	// ====================
 	// Click Handlers
 	// ====================
-	$('.create_event').click(function(){
-		$('.event_form_bubble').show();
-	});
-
 	$('#choose_event_icon').click(function(){
 		$('.event_icon_selection').show();
 	});

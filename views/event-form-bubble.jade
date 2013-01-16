@@ -1,26 +1,36 @@
-.event_form_bubble(bubble-form, ng-controller='CreateEventController')
-	.marker_bg.bg_info 
-	form.event_form(ng-submit='createEvent()')
-		label(for='event_name') Event Name
-		.name_icon
-			.name
-				input(type='text', name='event_name', id='event_name', value='', ng-model='eventDetail.name')
-			.icon
-				#choose_event_icon.event_type.icon_info
-			//- select.event_icon_selection
-			//- 	option(data-image='../img/info_icon.png', ng-click='setEventType("info")') Info Session
-			//- 	option(data-image='../img/game_icon.png', ng-click='setEventType("game")') Entertainment
-			//- 	option(data-image='../img/social_icon.png', ng-click='setEventType("social")') Social
-			//- 	option(data-image='../img/food_icon.png', ng-click='setEventType("food")') Refreshment
-			//- 	option(data-image='../img/workshop_icon.png', ng-click='setEventType("workshop")') Workshop
+#event-form-bubble.modal.hide.fade(bubble-form, ng-controller='CreateEventController')
+	//- .marker_bg.bg_info 
+	.modal-header
+		button.close(type='button', data-dismiss='modal')&times;
+		h3 Create Event
 
-		label(for='event_desc') Event Description
-		textarea#event_desc(name='event_desc', ng-model='eventDetail.desc')
+	.modal-body
+		.row-fluid
+			.span7
+				.input-append
+					input(type='text', placeHolder='Event Name', value='', ng-model='eventDetail.name')
+					.btn-group
+						button.btn.dropdown-toggle(data-toggle='dropdown') Action&nbsp;
+							span.caret
+						ul.dropdown-menu
+							li
+								a omg
 
-		label(for='event_tag') Event Tags
-		input(type='text', name='event_tag', id='event_tag', value='')
+				textarea.span12(rows='5', placeHolder='Description', ng-model='eventDetail.desc')
+				span.misc-desc {{remaining()}}
+				input.span12(type='text', placeHolder='Tags', value='')
 
-		.buttons
-			button.cancel Cancel
-			input.submit(type='submit', value='Publish')
+			.span5
+				.desc
+					p This is where you creat events!
+					p Created events will be saved to your event calender, from where you can select events and pin them 
+						| to the map for everyone to see!
+					p Please enter brief description of what the event is about, if the space doesn't fit you can put a
+						| link to your original event page.
+
+		
+
+	.modal-footer
+		button.btn.btn-secondary(data-dismiss='modal') Cancel
+		button.btn.btn-primary(ng-click='createEvent()') Save Event
 
