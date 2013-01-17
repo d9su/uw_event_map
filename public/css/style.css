@@ -1,14 +1,28 @@
-#event-form-bubble .input-append {
+#event-form-bubble .dropdown-toggle {
+  margin: 0;
+  background-position: 2px 1px;
   width: 100%;
+  height: 100%;
 }
-#event-form-bubble .input-append input {
-  width: 75%;
+#event-form-bubble .icon-info {
+  background-repeat: no-repeat;
+  background-image: url("../img/info_icon.png");
 }
-#event-form-bubble .input-append .btn-group {
-  width: 20%;
+#event-form-bubble .icon-game {
+  background-repeat: no-repeat;
+  background-image: url("../img/game_icon.png");
 }
-#event-form-bubble .input-append .dropdown-toggle {
-  width: 100%;
+#event-form-bubble .icon-social {
+  background-repeat: no-repeat;
+  background-image: url("../img/social_icon.png");
+}
+#event-form-bubble .icon-food {
+  background-repeat: no-repeat;
+  background-image: url("../img/food_icon.png");
+}
+#event-form-bubble .icon-workshop {
+  background-repeat: no-repeat;
+  background-image: url("../img/workshop_icon.png");
 }
 #event-form-bubble textarea {
   min-width: 100%;
@@ -16,7 +30,18 @@
   margin-top: 20px;
   margin-bottom: 0px;
 }
+#event-form-bubble .desc {
+  color: #666;
+  border-left: 1px solid #c2c2c2;
+  padding: 10px 0 10px 20px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+#event-form-bubble .desc p + p {
+  margin-top: 30px;
+}
 .misc-desc {
+  margin-bottom: 20px;
   font-size: 0.9em;
   color: #7c7c7c;
   display: block;

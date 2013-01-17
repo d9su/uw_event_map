@@ -26,6 +26,7 @@ angular.module('compuzzControllers', []).
 	controller('CreateEventController', ['$scope', 'createEventService',
 		function($scope, newEvent){
 			$scope.newEvent = newEvent;
+			$scope.errorMsg = "";
 			$scope.eventDetail = { name: '', desc: '', type: 'info', tags: [] };
 			$scope.remaining = function() {
 				var msg = '';
@@ -39,8 +40,24 @@ angular.module('compuzzControllers', []).
 
 			$scope.createEvent = function() {
 				// Add additional form validation if necessary
+				if ($scope.eventDetail.name == "" || $scope.eventDetail.desc == "") {
+					$scope.errorMsg = "Event name and desciption cannot be empty."
+					return;
+
+				} else if ($scope.eventDetail.desc.length > 250) {
+					$scope.errorMsg = "Description is too long."
+					return;
+				}
+
 				// Add additional data transformation
 				newEvent.batchSet($scope.eventDetail);
+				newEvent.setOk(true);
+				$scope.resetState();
+			}
+
+			$scope.resetState = function() {
+				$scope.errorMsg = "";
+				$scope.eventDetail = { name: '', desc: '', type: 'info', tags: [] };
 			}
 
 		}

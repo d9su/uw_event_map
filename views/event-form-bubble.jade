@@ -7,30 +7,37 @@
 	.modal-body
 		.row-fluid
 			.span7
-				.input-append
-					input(type='text', placeHolder='Event Name', value='', ng-model='eventDetail.name')
-					.btn-group
-						button.btn.dropdown-toggle(data-toggle='dropdown') Action&nbsp;
+				.row-fluid.align-top
+					input.span10(type='text', placeHolder='Event Name', value='', ng-model='eventDetail.name')
+					.btn-group.span2.pull-right
+						button.btn.dropdown-toggle.icon-info(data-toggle='dropdown')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							span.caret
 						ul.dropdown-menu
 							li
-								a omg
+								a Info session
+							li
+								a Entertainment
+							li
+								a Workshop
+							li
+								a Social
+							li
+								a Refreshment
 
 				textarea.span12(rows='5', placeHolder='Description', ng-model='eventDetail.desc')
 				span.misc-desc {{remaining()}}
-				input.span12(type='text', placeHolder='Tags', value='')
+				input.span12(tag-search type='text', placeHolder='Tags', value='')
 
 			.span5
 				.desc
-					p This is where you creat events!
-					p Created events will be saved to your event calender, from where you can select events and pin them 
-						| to the map for everyone to see!
-					p Please enter brief description of what the event is about, if the space doesn't fit you can put a
-						| link to your original event page.
+					p Don't forget to pick a custom icon for your event which will be shown on the pin!
+					p Created events will be saved to your event calender, from where you can select and pin 
+						| events to the map.
 
 		
 
 	.modal-footer
-		button.btn.btn-secondary(data-dismiss='modal') Cancel
+		p.pull-left.text-error {{errorMsg}}
+		button.btn.btn-secondary(data-dismiss='modal', ng-click='resetState()') Cancel
 		button.btn.btn-primary(ng-click='createEvent()') Save Event
 

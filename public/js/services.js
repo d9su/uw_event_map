@@ -7,29 +7,45 @@ angular.module('compuzzServices', ['ngResource']).
 			// matchTags: { method: 'GET', params: {}, isArray: true }
 		});
 
+		var eventResources = $resource('/event', {}, {
+			save: { method: 'POST' },
+		});
+
 		return {
-			tag: tagResources
+			tag: tagResources,
+			event: eventResources
 		}
 
 	}).
 
-	service('createEventService', ['$rootScope', function($rootScope){
-		var readyToPin = false;
+	service('createEventService', ['$rootScope', 'dbService', function($rootScope, db){
+		var dataOk = false;
 		var eventId = -1;
 		var eventName = "";
 		var eventDesc = "";
 		var eventType = "info";
 		var eventTags = [];
 
+		var saveEvent = function() {
+			console.log('Saving to server...');
+			db.event.save({
+				id: eventId,
+				name: eventName,
+				type: eventType,
+				desc: eventDesc
+			});
+			console.log('Saved');
+		};
+
 		return {
-			getName: function() { return eventName; },
-			getDesc: function() { return eventDesc; },
-			getType: function() { return eventType; },
 			getId: function() { return eventId; },
+			getName: function() { return eventName; },
+			getType: function() { return eventType; },
+			getDesc: function() { return eventDesc; },
 
 			setName: function(input) { eventName = input; },
-			setDesc: function(input) { eventDesc = input; },
 			setType: function(input) { eventType = input; },
+			setDesc: function(input) { eventDesc = input; },
 			setTags: function(input) { eventTags = input; },
 			batchSet: function(event) {
 				eventName = event.name;
@@ -38,18 +54,21 @@ angular.module('compuzzServices', ['ngResource']).
 				eventTags = event.tags;
 			},
 
-			isReady: function() { return readyToPin; },
-			setReady: function(isReady) { readyToPin = isReady ? true : false;},
-
 			reset: function() {
-				$rootScope.$apply(function(){
-					readyToPin = false;
-					eventId = -1;
-					eventName = "";
-					eventDesc = "";
-					eventType = "info";
-				});
+				dataOk = false;
+				eventId = -1;
+				eventName = "";
+				eventDesc = "";
+				eventType = "info";
+			},
+
+			isOk: function() { return dataOk; },
+			setOk: function(flag) { 
+				dataOk = flag ? true : false; 
+				if (dataOk)
+					saveEvent();
 			}
+
 		}
 	}]).
 
@@ -94,7 +113,7 @@ angular.module('compuzzServices', ['ngResource']).
 		};
 
 		var placeEventFlag = function(location) {
-			if (!newEvent.isReady()) {
+			if (!newEvent.isOk()) {
 				return;
 
 			} else {

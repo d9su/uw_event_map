@@ -4,6 +4,14 @@ angular.module('compuzzDirectives', []).
 
 	directive('bubbleForm', ['createEventService', function(eventService){
 		var linkFn = function(scope, el, attr) {
+			scope.service = eventService;
+			scope.$watch('service.isOk()', function(newVal, oldVal) {
+				if (newVal === true) {
+					el.modal('hide');
+					eventService.reset();
+				}
+			});
+
 			// el.find('.submit').click(function() {
 			// 	el.css('-webkit-transform', 'scale(0.1)');
 			// 	el.css('-moz-transform', 'scale(0.1)');
@@ -43,7 +51,7 @@ angular.module('compuzzDirectives', []).
 	directive('navbarBtnGroup', function() {
 		var linkFn = function(scope, el, attr) {
 			el.find('.create-event').click(function(){
-				$('#event-form-bubble').modal();
+				$('#event-form-bubble').modal('show');
 			});
 		};
 

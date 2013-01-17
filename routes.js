@@ -21,5 +21,5 @@ var database = require('./routes/database')
 	app.get('/users', user.list);
 
 	// Post event info
-	app.post('/event', eventInfoHandler.saveEventInfo);
+	app.post('/event', database.saveEvent);
  }
