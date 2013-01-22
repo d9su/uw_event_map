@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('compuzzServices', ['ngResource']).
-	service('dbService', function($resource){
+	service('restfulService', function($resource){
 		var tagResources = $resource('/tags', {}, {
 			getTags: { method: 'GET', isArray: true },
 			// matchTags: { method: 'GET', params: {}, isArray: true }
@@ -11,14 +11,27 @@ angular.module('compuzzServices', ['ngResource']).
 			save: { method: 'POST' },
 		});
 
+		var loginResource = $resource('/login', {}, {
+			login: { method: 'GET' },
+		});
+
 		return {
 			tag: tagResources,
-			event: eventResources
+			event: eventResources,
+			portal: loginResource
 		}
 
 	}).
 
-	service('tagSearchService', ['dbService', function(db){
+	service('logInService', ['restfulService', function(restful){
+		return {
+			login: function() {
+				return restful.portal.login();
+			}
+		}
+	}]).
+
+	service('tagSearchService', ['restfulService', function(db){
 		var matchedTags = [];
 		var timer = 0;
 
@@ -41,7 +54,7 @@ angular.module('compuzzServices', ['ngResource']).
 
 	}]).
 
-	service('createEventService', ['$rootScope', 'dbService', function($rootScope, db){
+	service('createEventService', ['$rootScope', 'restfulService', function($rootScope, db){
 		var dataOk = false;
 		var eventId = -1;
 		var eventName = "";

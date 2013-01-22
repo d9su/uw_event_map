@@ -16,9 +16,8 @@ angular.module('mapFilters', []).filter('icon', function(){
 
 /* App Module */
 angular.module('compuzz', ['compuzzControllers', 'compuzzServices', 'compuzzDirectives']);
-
-// compuzz.config(['$routeProvider', function($routeProvider) {
-//  	$routeProvider.
-// 		when('/', {templateUrl: 'partials/phone-list.html', controller: EventController}).
-// 		otherwise({redirectTo: '/'});
+// 	config(['$routeProvider', function($routeProvider) {
+// 	 	$routeProvider.
+// 			when('/oauth', {templateUrl: 'partials/phone-list.html', controller: EventController}).
+// 			otherwise({redirectTo: '/'});
 // }]);

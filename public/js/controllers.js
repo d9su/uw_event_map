@@ -9,10 +9,16 @@ angular.module('compuzzControllers', []).
 		}
 	]).
 
-	controller('NavBarController', ['$scope', 'tagSearchService',
-		function($scope, tagSearch){
+	controller('NavBarController', ['$scope', 'tagSearchService', 'logInService',
+		function($scope, tagSearch, loginPortal){
+			$scope.loginFeedback = {};
+			
 			$scope.getMatchedTags = function() {
 				return tagSearch.getTags();
+			};
+
+			$scope.login = function() {
+				$scope.loginFeedback = loginPortal.login()
 			};
 		}
 	]).

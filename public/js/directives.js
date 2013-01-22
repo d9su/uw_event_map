@@ -25,6 +25,21 @@ angular.module('compuzzDirectives', []).
 			el.find('.create-event').click(function(){
 				$('#event-form-bubble').modal('show');
 			});
+
+			el.find('.login').click(function(){
+				scope.login();
+			});
+
+			scope.$watch('loginFeedback', function(newVal, oldVal){
+				console.log(newVal);
+				if (newVal && newVal.flag == 'success') {
+					window.open(newVal.url, 'Log in', 'height=200, width=400');
+					return false;
+				} else {
+					console.log(newVal);
+					return false;
+				}
+			});
 		};
 
 		return linkFn;
