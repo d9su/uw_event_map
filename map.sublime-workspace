@@ -1,0 +1,959 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mat",
+				"matchedTags"
+			],
+			[
+				"tagSearc",
+				"tagSearchService"
+			],
+			[
+				"db",
+				"dbService"
+			],
+			[
+				"rem",
+				"remaining"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"background",
+				"background-repeat"
+			],
+			[
+				"remain",
+				"remainingChars"
+			],
+			[
+				"margin-",
+				"margin-top"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"link",
+				"linkFn"
+			],
+			[
+				"match",
+				"matchString"
+			],
+			[
+				"drop",
+				"dropdown-menu"
+			],
+			[
+				"btn",
+				"btn-group"
+			],
+			[
+				"reset",
+				"reset_signal"
+			],
+			[
+				"el",
+				"el	element"
+			],
+			[
+				"compuzz",
+				"compuzzServices"
+			],
+			[
+				"createE",
+				"createEventService"
+			],
+			[
+				"feed",
+				"feed-container"
+			],
+			[
+				"tweet",
+				"tweet-bit"
+			],
+			[
+				"new-",
+				"new-tweet-box"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"retweet",
+				"retweet-stat"
+			],
+			[
+				"backt",
+				"background-position"
+			],
+			[
+				"form",
+				"form-trigger"
+			],
+			[
+				"new",
+				"new-tweet-text"
+			],
+			[
+				"ali",
+				"vertical-align"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"event",
+				"eventInfoHandler"
+			],
+			[
+				"even",
+				"event_title"
+			],
+			[
+				"Info",
+				"infowindow"
+			],
+			[
+				"info",
+				"infowindow"
+			],
+			[
+				"wor",
+				"workshop_pin"
+			],
+			[
+				"food",
+				"food_pin"
+			],
+			[
+				"social",
+				"social_pin"
+			],
+			[
+				"game",
+				"game_pin"
+			],
+			[
+				"render",
+				"render_next"
+			],
+			[
+				"previous_s",
+				"previous_substep"
+			],
+			[
+				"current",
+				"current_step"
+			],
+			[
+				"previous",
+				"previous_step"
+			],
+			[
+				"remove",
+				"removeAttr"
+			],
+			[
+				"cou",
+				"create-course-bit-container"
+			],
+			[
+				"active",
+				"active_step"
+			],
+			[
+				"Progre",
+				"ProgressBar"
+			],
+			[
+				"course",
+				"course_creation"
+			],
+			[
+				"current_s",
+				"current_substep"
+			],
+			[
+				"cour",
+				"course_creation"
+			],
+			[
+				"next",
+				"next_substep"
+			],
+			[
+				"is",
+				"isFinalStep"
+			],
+			[
+				"create",
+				"create-course-bit-step-1-1"
+			],
+			[
+				"Progress",
+				"ProgressBarView"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"co",
+				"color-bit"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"small",
+				"small-form"
+			],
+			[
+				"step",
+				"step_num"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"font-s",
+				"font-style"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/index.jsp",
+			"settings":
+			{
+				"buffer_size": 14626,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDC.jsp",
+			"settings":
+			{
+				"buffer_size": 19063,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDCRoshan.jsp",
+			"settings":
+			{
+				"buffer_size": 18344,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/mainImports.jsp",
+			"settings":
+			{
+				"buffer_size": 1715,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/new.jsp",
+			"settings":
+			{
+				"buffer_size": 3703,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/newVDC.jsp",
+			"settings":
+			{
+				"buffer_size": 16583,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/vdcGraph.jsp",
+			"settings":
+			{
+				"buffer_size": 7787,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/firewalls.jsp",
+			"settings":
+			{
+				"buffer_size": 17529,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/usersVDC.jsp",
+			"settings":
+			{
+				"buffer_size": 1625,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 54.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Packga",
+				"Package Control: Install Package"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/dimka.jsp",
+		"/home/rex/workspace/map_project/uw_event_map/map.sublime-project",
+		"/home/rex/workspace/map_project/uw_event_map/routes/database.js",
+		"/home/rex/workspace/map_project/uw_event_map/routes.js",
+		"/home/rex/workspace/map_project/uw_event_map/views/layout.jade",
+		"/home/rex/workspace/map_project/uw_event_map/public/css/style.styl",
+		"/home/rex/workspace/map_project/uw_event_map/views/event-form-bubble.jade",
+		"/home/rex/workspace/map_project/uw_event_map/views/index.jade",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/map.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/controllers.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/services.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/directives.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/app.js",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/services.js",
+		"/home/rex/workspace/map_project/uw_event_map/compuzz.js",
+		"/home/rex/workspace/map_project/uw_event_map/routes/mainHandler.js",
+		"/home/rex/workspace/map_project/uw_event_map/routes/eventInfoHandler.js",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/partials/phone-list.html",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/scripts/web-server.js",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/app.js",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/controllers.js",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/phones/dell-streak-7.json",
+		"/home/rex/workspace/map_project/uw_event_map/package.json",
+		"/home/rex/workspace/map_project/uw_event_map/routes/user.js",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/index.html",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/partials/phone-detail.html",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/test/unit/controllersSpec.js",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/scripts/testacular.conf.js",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/scripts/test.sh",
+		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/filters.js",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/tweets.json",
+		"/var/www/backbone/index.html",
+		"/var/www/js/views/tweet.js",
+		"/var/www/js/twitter.js",
+		"/var/www/css/style.css",
+		"/var/www/index.html",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/js/twitter.js",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/css/style.css",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/js/collections/tweets.js",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/js/views/app.js",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/js/views/tweet.js",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/backbone/index.html",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/index.html",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/js/app.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/css/style.css",
+		"/home/rex/workspace/myplanet/mpd-proto-challenge/files/css/style.less",
+		"/home/rex/workspace/map_project/uw_event_map/routes/baseHandler.js",
+		"/home/rex/workspace/map_project/uw_event_map/views/home.jade",
+		"/home/rex/workspace/map_project/uw_event_map/routes/home.js",
+		"/home/rex/workspace/test/compuzz.js",
+		"/home/rex/workspace/test/views/layout.jade",
+		"/home/rex/workspace/test/public/js/map.js",
+		"/home/rex/workspace/test/views/event-form-bubble.jade",
+		"/home/rex/workspace/test/views/home.jade",
+		"/home/rex/workspace/map_project/uw_event_map/index.html",
+		"/home/rex/workspace/test/public/css/style.scss",
+		"/home/rex/workspace/map_project/uw_event_map/js/map.js",
+		"/home/rex/workspace/map_project/uw_event_map/css/style.css",
+		"/home/rex/workspace/bookneto/bookneto/templates/email/base.html",
+		"/home/rex/workspace/bookneto/bookneto/static/web/css/create-course.css",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step1-2.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/course-registration/create-course-bit-step1-1.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/course-registration/create-course-bit-step3-2.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/course-registration/create-course-bit-step-1-1.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/course-registration/garbage=create-course-bit-step1-1.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step4-1.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step3-2.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step3-1.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step2-1.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step1-1.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step1.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/web/base.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/base.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/web/account.html",
+		"/home/rex/workspace/bookneto/bookneto/lib/Account.py",
+		"/home/rex/workspace/bookneto/bookneto/static/web/js/account.js",
+		"/home/rex/workspace/bookneto/bookneto/routes.py",
+		"/home/rex/workspace/bookneto/bookneto/handlers/AccountHandlers.py",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step4.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step3.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-bit-step2.html",
+		"/home/rex/workspace/bookneto/bookneto/static/web/css/nice-form-elements.css",
+		"/home/rex/workspace/bookneto/bookneto/static/public/style.css",
+		"/home/rex/workspace/bookneto/bookneto/handlers/ProfileHandlers.py",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/register.html",
+		"/home/rex/workspace/bookneto/bookneto/templates/public/create-course-step1.html",
+		"/home/rex/workspace/bookneto/bookneto/handlers/LinkHandlers.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"vdc_details_toolbar",
+			"vdc.txt",
+			"updateLeftTree",
+			"vdcsJsonData",
+			"sectionOverview",
+			"loadjscssfile",
+			"helpVDC",
+			"firewalls",
+			"overviewVDC",
+			"setOk",
+			"digest",
+			"setReady",
+			"isReady",
+			"readyToPin",
+			"phone",
+			"map_canvas",
+			"$scope",
+			"		\n",
+			"feeds",
+			"el",
+			"well",
+			"cloud-block",
+			"'",
+			"ajax",
+			"router",
+			"PanelsView",
+			"button",
+			"user-bit",
+			"font-family"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"cloud-block",
+			"well",
+			"\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/index.jsp",
+					"settings":
+					{
+						"buffer_size": 14626,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1740,
+								1740
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 409.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDC.jsp",
+					"settings":
+					{
+						"buffer_size": 19063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								721,
+								721
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDCRoshan.jsp",
+					"settings":
+					{
+						"buffer_size": 18344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2142.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/mainImports.jsp",
+					"settings":
+					{
+						"buffer_size": 1715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/new.jsp",
+					"settings":
+					{
+						"buffer_size": 3703,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/newVDC.jsp",
+					"settings":
+					{
+						"buffer_size": 16583,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14660,
+								14660
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 8098.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/vdcGraph.jsp",
+					"settings":
+					{
+						"buffer_size": 7787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2344,
+								2344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/firewalls.jsp",
+					"settings":
+					{
+						"buffer_size": 17529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								64,
+								64
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/usersVDC.jsp",
+					"settings":
+					{
+						"buffer_size": 1625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 408.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"base.html",
+				"templates/public/base.html"
+			],
+			[
+				"base.",
+				"templates/email/base.html"
+			],
+			[
+				"create-course.css",
+				"static/web/css/create-course.css"
+			],
+			[
+				"create-course-bit-step4-1",
+				"templates/public/course-registration/create-course-bit-step4-1.html"
+			],
+			[
+				"create-course-bit-step",
+				"templates/public/course-registration/create-course-bit-step3-2.html"
+			],
+			[
+				"create-course-bit",
+				"templates/public/course-registration/create-course-bit-step3-1.html"
+			],
+			[
+				"create-course",
+				"templates/public/create-course-bit-step1-2.html"
+			],
+			[
+				"course-creati",
+				"templates/public/course-registration/create-course-bit-step3-2.html"
+			],
+			[
+				"create-course-step1-1",
+				"templates/public/course-registration/create-course-bit-step1-1.html"
+			],
+			[
+				"create-course-bit-step-1-1",
+				"templates/public/course-registration/create-course-bit-step-1-1.html"
+			],
+			[
+				"garba",
+				"templates/public/course-registration/garbage=create-course-bit-step1-1.html"
+			],
+			[
+				"createcoursehandler",
+				"handlers/CreateCourseHandlers.py"
+			],
+			[
+				"create-course-bit-step1-1",
+				"templates/public/course-registration/create-course-bit-step1-1.html"
+			],
+			[
+				"route",
+				"routes.py"
+			],
+			[
+				"base",
+				"templates/web/base.html"
+			],
+			[
+				"account",
+				"templates/web/account.html"
+			],
+			[
+				"create",
+				"templates/public/create-course.html"
+			],
+			[
+				"account.js",
+				"static/web/js/account.js"
+			],
+			[
+				"routes",
+				"routes.py"
+			],
+			[
+				"create-",
+				"templates/public/create-course-bit-step2.html"
+			],
+			[
+				"crea",
+				"templates/public/create-course-bit-step2.html"
+			],
+			[
+				"create-course-bit-step1",
+				"templates/public/create-course-bit-step1-2.html"
+			],
+			[
+				"create-course-bit-",
+				"templates/public/create-course-bit-step2.html"
+			],
+			[
+				"creat-course",
+				"templates/public/create-course-bit-step1.html"
+			],
+			[
+				"create-cou",
+				"templates/public/create-course.html"
+			],
+			[
+				"linkhander",
+				"handlers/LinkHandlers.py"
+			],
+			[
+				"profile",
+				"handlers/ProfileHandlers.py"
+			],
+			[
+				"register",
+				"templates/public/register.html"
+			],
+			[
+				"nice-form",
+				"static/web/css/nice-form-elements.css"
+			],
+			[
+				"createcou",
+				"templates/public/create-course-step1.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 161.0,
+	"status_bar_visible": true
+}

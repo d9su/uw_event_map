@@ -9,22 +9,17 @@ angular.module('compuzzControllers', []).
 		}
 	]).
 
-	controller('NavBarController', ['$scope', 'dbService',
-		function($scope, db){
-			$scope.matchString = "";
-			$scope.matchedTags = [];
-			$scope.timer = 0;
-			$scope.searchTag = function(){
-				clearTimeout($scope.timer);
-				$scope.timer = setTimeout(function(){
-					$scope.matchedTags = db.tag.getTags({match: $scope.matchString})
-				}, 500);
+	controller('NavBarController', ['$scope', 'tagSearchService',
+		function($scope, tagSearch){
+			$scope.getMatchedTags = function() {
+				return tagSearch.getTags();
 			};
 		}
 	]).
 
-	controller('CreateEventController', ['$scope', 'createEventService',
-		function($scope, newEvent){
+	controller('CreateEventController', ['$scope', 'createEventService', 'tagSearchService', 
+		function($scope, newEvent, tagSearch){
+			$scope.sent = false;
 			$scope.newEvent = newEvent;
 			$scope.errorMsg = "";
 			$scope.eventDetail = { name: '', desc: '', type: 'info', tags: [] };
@@ -36,6 +31,10 @@ angular.module('compuzzControllers', []).
 				else
 					msg = 'characters left';
 				return remainingChars + ' ' + msg;
+			};
+
+			$scope.setEventType = function(type) {
+				$scope.eventDetail.type = type;
 			}
 
 			$scope.createEvent = function() {
@@ -51,14 +50,28 @@ angular.module('compuzzControllers', []).
 
 				// Add additional data transformation
 				newEvent.batchSet($scope.eventDetail);
-				newEvent.setOk(true);
+				newEvent.save();
 				$scope.resetState();
-			}
+				$scope.sent = true;
+			};
+
+			$scope.didSent = function() {
+				if ($scope.sent) {
+					$scope.sent = false;
+					return true;
+				}
+
+				return false;
+			};
 
 			$scope.resetState = function() {
 				$scope.errorMsg = "";
 				$scope.eventDetail = { name: '', desc: '', type: 'info', tags: [] };
-			}
+			};
+
+			$scope.getMatchedTags = function() {
+				return tagSearch.getTags();
+			};
 
 		}
 	]).

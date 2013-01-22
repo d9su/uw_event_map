@@ -1,8 +1,19 @@
-#event-form-bubble .dropdown-toggle {
+#event-form-bubble .event-type-selection-toggle {
   margin: 0;
+  padding-left: 32px;
   background-position: 2px 1px;
   width: 100%;
   height: 100%;
+}
+#event-form-bubble .dropdown-menu a span {
+  vertical-align: middle;
+}
+#event-form-bubble .icon-option {
+  background-position: 0 0;
+  width: 30px;
+  height: 30px;
+  margin-left: -5px;
+  margin-right: 10px;
 }
 #event-form-bubble .icon-info {
   background-repeat: no-repeat;

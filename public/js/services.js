@@ -18,6 +18,29 @@ angular.module('compuzzServices', ['ngResource']).
 
 	}).
 
+	service('tagSearchService', ['dbService', function(db){
+		var matchedTags = [];
+		var timer = 0;
+
+		return {
+			searchTag: function(matchString) {
+				clearTimeout(timer);
+				timer = setTimeout(function(){
+					matchedTags = db.tag.getTags({match: matchString})
+				}, 500);
+			},
+
+			getTags: function() {
+				return matchedTags;
+			},
+
+			clearTags: function() {
+				matchedTags = [];
+			}
+		}
+
+	}]).
+
 	service('createEventService', ['$rootScope', 'dbService', function($rootScope, db){
 		var dataOk = false;
 		var eventId = -1;
@@ -25,6 +48,14 @@ angular.module('compuzzServices', ['ngResource']).
 		var eventDesc = "";
 		var eventType = "info";
 		var eventTags = [];
+
+		var reset = function() {
+			dataOk = false;
+			eventId = -1;
+			eventName = "";
+			eventDesc = "";
+			eventType = "info";
+		};
 
 		var saveEvent = function() {
 			console.log('Saving to server...');
@@ -35,6 +66,7 @@ angular.module('compuzzServices', ['ngResource']).
 				desc: eventDesc
 			});
 			console.log('Saved');
+			reset();
 		};
 
 		return {
@@ -52,21 +84,14 @@ angular.module('compuzzServices', ['ngResource']).
 				eventDesc = event.desc;
 				eventType = event.type;
 				eventTags = event.tags;
-			},
-
-			reset: function() {
-				dataOk = false;
-				eventId = -1;
-				eventName = "";
-				eventDesc = "";
-				eventType = "info";
+				dataOk = true;
 			},
 
 			isOk: function() { return dataOk; },
-			setOk: function(flag) { 
-				dataOk = flag ? true : false; 
-				if (dataOk)
+			save: function() { 
+				if (dataOk) {
 					saveEvent();
+				}
 			}
 
 		}

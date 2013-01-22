@@ -2,51 +2,23 @@
 
 angular.module('compuzzDirectives', []).
 
-	directive('bubbleForm', ['createEventService', function(eventService){
+	directive('bubbleForm', function(){
 		var linkFn = function(scope, el, attr) {
-			scope.service = eventService;
-			scope.$watch('service.isOk()', function(newVal, oldVal) {
+			scope.$watch('didSent()', function(newVal, oldVal) {
 				if (newVal === true) {
 					el.modal('hide');
-					eventService.reset();
 				}
 			});
 
-			// el.find('.submit').click(function() {
-			// 	el.css('-webkit-transform', 'scale(0.1)');
-			// 	el.css('-moz-transform', 'scale(0.1)');
-			// 	el.css('-o-transform', 'scale(0.1)');
-			// 	el.css('-ms-transform', 'scale(0.1)');
-			// 	el.find('.event_form').fadeOut(500);
-			// 	el.find('.marker_bg').fadeIn(500);
-			// 	el.animate({'border-radius': '180px'}, 100);
-			// 	el.animate({top: '-300px'}, 500, function(){
-			// 		scope.$apply(function(){
-			// 			eventService.setReady(true);
-			// 		})
-			// 	});
-			// });
-
-			// scope.service = eventService;
-
-			// scope.$watch('service.isReady()', function(newVal, oldVal) {
-			// 	if (newVal === false) {
-			// 		el.find('.marker_bg').hide();
-			// 		el.find('.event_form').show();
-			// 		el.hide();
-			// 		el.css('border-radius' , '10px');
-			// 		el.css('-webkit-transform', 'scale(1.0)');
-			// 		el.css('-moz-transform', 'scale(1.0)');
-			// 		el.css('-o-transform', 'scale(1.0)');
-			// 		el.css('-ms-transform', 'scale(1.0)');
-			// 		el.css('left', '50%');
-			// 		el.css('top', '50%');
-			// 	}
-			// }, true);
+			scope.$watch('eventDetail.type', function(newVal, oldVal){
+				el.find('.event-type-selection-toggle')
+					.removeClass('icon-'+oldVal)
+					.addClass('icon-'+newVal);
+			});
 		};
 
 		return linkFn;
-	}]).
+	}).
 
 	directive('navbarBtnGroup', function() {
 		var linkFn = function(scope, el, attr) {
@@ -58,11 +30,28 @@ angular.module('compuzzDirectives', []).
 		return linkFn;
 	}).
 
-	directive('tagSearch', function() {
+	directive('tagPopOver', function() {
+		var popOverTitle = 'Tags';
+		var popOverContent = 'span.label.label-info(ng-repeat="tag in getMatchedTags()") {{tag.tag_name}}'
+
+		return {
+			
+		};
+
+	}).
+
+	directive('tagSearch', ['tagSearchService', function(tagSearch) {
 		var linkFn = function(scope, el, attr) {
-			el.keyup(function(){scope.searchTag();});
+			el.keyup(function(){
+				if (el.val() == '') {
+					tagSearch.clearTags();
+					scope.$digest(); // Change this to $apply()
+				} else {
+					tagSearch.searchTag(el.val());
+				}
+			});
 		};
 
 		return linkFn;
-	});
+	}]);
 

@@ -43,18 +43,31 @@ exports.saveEvent = function(req, res) {
 
 	// Create
 	} else if (parseInt(id) === -1) {
-		console.log('INSERT INTO event_info (`name`, `type`, `date`, `desc`) VALUES ('+name+', '+type+', '+date+', '+desc+')');
-		c.query('INSERT INTO event_info (`name`, `type`, `date`, `desc`) VALUES ('+name+', '+type+', '+date+', '+desc+')',
-			function(err, rows, fields){
-				if (!err) {
-					res.end();
+		var typeQuery = c.query('SELECT id FROM event_type WHERE type_name = ' + type);
+		typeQuery.
+			on('result', function(row){
+				// Found a supported event type
+				if (row!={} && row!=null) {
+					c.query('INSERT INTO event_info (`name`, `type`, `date`, `desc`) VALUES ('+name+', '+row.id+', '+date+', '+desc+')',
+						function(err, rows, fields) {
+							if (!err) {
+								res.end();
+							} else {
+								console.log(err);
+								res.end();
+							}
+						}
+					);
+
+				// Unsupported event type
 				} else {
-					console.log(err);
 					res.end();
 				}
-
-			}
-		);
+			}).
+			on('error', function(error){
+				console.log('error')
+				res.end()
+			});
 
 
 	// Unknown method

@@ -10,23 +10,31 @@
 				.row-fluid.align-top
 					input.span10(type='text', placeHolder='Event Name', value='', ng-model='eventDetail.name')
 					.btn-group.span2.pull-right
-						button.btn.dropdown-toggle.icon-info(data-toggle='dropdown')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						button.btn.dropdown-toggle.event-type-selection-toggle.icon-info(data-toggle='dropdown')
 							span.caret
-						ul.dropdown-menu
-							li
-								a Info session
-							li
-								a Entertainment
-							li
-								a Workshop
-							li
-								a Social
-							li
-								a Refreshment
+						ul.dropdown-menu.event-type-selection
+							li: a(ng-click='setEventType("info")')
+								span.icon-option.icon-info
+								span Info session
+							li: a(ng-click='setEventType("game")')
+								span.icon-option.icon-game
+								span Entertainment
+							li: a(ng-click='setEventType("workshop")')
+								span.icon-option.icon-workshop
+								span Workshop
+							li: a(ng-click='setEventType("social")')
+								span.icon-option.icon-social
+								span Social
+							li: a(ng-click='setEventType("food")')
+								span.icon-option.icon-food
+								span Refreshment
 
 				textarea.span12(rows='5', placeHolder='Description', ng-model='eventDetail.desc')
 				span.misc-desc {{remaining()}}
 				input.span12(tag-search type='text', placeHolder='Tags', value='')
+				.selected-tags
+				.candidate-tags
+					span.label(ng-repeat='tag in getMatchedTags()') {{tag.tag_name}}
 
 			.span5
 				.desc
