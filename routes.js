@@ -3,7 +3,6 @@
  */
 var mainHandler = require('./routes/mainHandler');
 var user = require('./routes/user');
-var eventInfoHandler = require('./routes/eventInfoHandler');
 var database = require('./routes/database')
 
 /**
@@ -14,12 +13,19 @@ var database = require('./routes/database')
  	// Home page
 	app.get('/', mainHandler.getIndex);
 
+	// Forms
+	app.get('/partials/:name', mainHandler.getPartial)
+
 	// Fetch tags
 	app.get('/tags', database.fetchTags);
 
+	// Check username
+	app.get('/user/checkname', database.checkname);
+
 	// TODO: User signup and login
-	app.get('/users', user.list);
+	app.post('/user/signup', user.signup, database.saveCredentials, user.setSession);
+	app.post('/user/login', database.checkCredentials, user.login, user.setSession);
 
 	// Post event info
-	app.post('/event', database.saveEvent);
+	app.post('/saveEvent', database.saveEvent);
  }

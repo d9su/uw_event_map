@@ -1,0 +1,28 @@
+#signup-form.modal.hide.fade(signup-form, ng-controller='SignupController')
+	.modal-header
+		button.close(type='button', data-dismiss='modal')&times;
+		h3 Sign Up
+
+	.modal-body
+		.row-fluid
+			.span7
+				input.username.span10(type='text', placeHolder='User Name', value='', ng-model='username')
+				input.password.span10(type='password', placeHolder='Password', value='', ng-model='password')
+				input.email.span10(type='text', placeHolder='Email', value='', ng-model='email')
+
+			.span5
+				.desc
+					span.misc-desc.username-desc
+						b User name 
+						| can contain [a-z, A-Z, '_', 0-9], length below 16 and must be unique.
+					span.misc-desc.password-desc
+						b Password 
+						| length is between 6 and 16 (case sensitive). You are only typing it once so be careful!
+					span.misc-desc.email-desc
+						b Email 
+						| is for password retrieval and event notifications (if you choose to receive any).
+
+	.modal-footer
+		p.pull-left.text-error {{errorMsg}}
+		button.btn.btn-secondary(data-dismiss='modal', ng-click='resetState()') Cancel
+		button.btn.btn-primary(ng-click='submitCredential()') Sign Up

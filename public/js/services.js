@@ -1,24 +1,48 @@
 'use strict';
 
 angular.module('compuzzServices', ['ngResource']).
-	service('dbService', function($resource){
-		var tagResources = $resource('/tags', {}, {
+	service('queryService', ['$http', '$resource', function($http, $resource){
+		var tagOps = $resource('/tags', {}, {
 			getTags: { method: 'GET', isArray: true },
 			// matchTags: { method: 'GET', params: {}, isArray: true }
 		});
 
-		var eventResources = $resource('/event', {}, {
-			save: { method: 'POST' },
+		var eventOps = $resource('/saveEvent', {}, {
+			save: { method: 'POST' }
 		});
 
-		return {
-			tag: tagResources,
-			event: eventResources
+		var userSignup = $resource('/user/signup', {}, {
+			submit: { method: 'POST' }
+		});
+
+		var userLogin = $resource('user/login', {}, {
+			submit: { method: 'POST' }
+		});
+
+		var getSignupForm = function(callback) {
+			$http.get('/user/signup')
+				.success(callback)
+				.error(function(data, status, headers, config){});
+		};
+
+		var getLoginForm = function(callback) {
+			$http.get('/user/login')
+				.success(callback)
+				.error(function(data, status, headers, config){});	
 		}
 
-	}).
+		return {
+			tag: tagOps,
+			event: eventOps,
+			signup: userSignup,
+			login: userLogin,
+			signupForm: getSignupForm,
+			loginForm: getLoginForm
+		}
 
-	service('tagSearchService', ['dbService', function(db){
+	}]).
+
+	service('tagSearchService', ['queryService', function(db){
 		var matchedTags = [];
 		var timer = 0;
 
@@ -41,7 +65,7 @@ angular.module('compuzzServices', ['ngResource']).
 
 	}]).
 
-	service('createEventService', ['$rootScope', 'dbService', function($rootScope, db){
+	service('createEventService', ['$rootScope', 'queryService', function($rootScope, db){
 		var dataOk = false;
 		var eventId = -1;
 		var eventName = "";

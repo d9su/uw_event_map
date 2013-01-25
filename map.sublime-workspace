@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"user_name"
+			],
+			[
+				"passw",
+				"password_h"
+			],
+			[
+				"pa",
+				"params"
+			],
+			[
+				"re",
+				"resource"
+			],
+			[
+				"n",
+				"ng-model"
+			],
+			[
+				"pass",
+				"password_h"
+			],
+			[
+				"c",
+				"crypto"
+			],
+			[
+				"login",
+				"loginFeedback"
+			],
+			[
 				"mat",
 				"matchedTags"
 			],
@@ -252,75 +284,107 @@
 	"buffers":
 	[
 		{
-			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/index.jsp",
+			"file": "compuzz.js",
 			"settings":
 			{
-				"buffer_size": 14626,
-				"line_ending": "Windows"
+				"buffer_size": 969,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDC.jsp",
+			"file": "routes.js",
 			"settings":
 			{
-				"buffer_size": 19063,
-				"line_ending": "Windows"
+				"buffer_size": 642,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDCRoshan.jsp",
+			"file": "routes/user.js",
 			"settings":
 			{
-				"buffer_size": 18344,
-				"line_ending": "Windows"
+				"buffer_size": 1389,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/mainImports.jsp",
+			"file": "routes/database.js",
 			"settings":
 			{
-				"buffer_size": 1715,
-				"line_ending": "Windows"
+				"buffer_size": 2564,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/new.jsp",
+			"file": "public/css/style.styl",
 			"settings":
 			{
-				"buffer_size": 3703,
-				"line_ending": "Windows"
+				"buffer_size": 4885,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/newVDC.jsp",
+			"file": "views/index.jade",
 			"settings":
 			{
-				"buffer_size": 16583,
-				"line_ending": "Windows"
+				"buffer_size": 971,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/vdcGraph.jsp",
+			"file": "views/event-form-bubble.jade",
 			"settings":
 			{
-				"buffer_size": 7787,
-				"line_ending": "Windows"
+				"buffer_size": 1825,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/firewalls.jsp",
+			"file": "views/auth-form.jade",
 			"settings":
 			{
-				"buffer_size": 17529,
-				"line_ending": "Windows"
+				"buffer_size": 568,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/usersVDC.jsp",
+			"file": "public/js/controllers.js",
 			"settings":
 			{
-				"buffer_size": 1625,
-				"line_ending": "Windows"
+				"buffer_size": 2625,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/services.js",
+			"settings":
+			{
+				"buffer_size": 5519,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/directives.js",
+			"settings":
+			{
+				"buffer_size": 1416,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/map.js",
+			"settings":
+			{
+				"buffer_size": 838,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 218,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -376,9 +440,24 @@
 	},
 	"file_history":
 	[
+		"/home/rex/workspace/map_project/uw_event_map/routes/database.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/app.js",
+		"/home/rex/workspace/map_project/uw_event_map/views/signup-form.jade",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/login.js",
+		"/home/rex/workspace/map_project/uw_event_map/views/login-progress.jade",
+		"/home/rex/workspace/map_project/uw_event_map/routes/mainHandler.js",
+		"/home/rex/workspace/map_project/uw_event_map/routes/kinvey.js",
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/usersVDC.jsp",
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/firewalls.jsp",
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/vdcGraph.jsp",
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/newVDC.jsp",
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/new.jsp",
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/mainImports.jsp",
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDCRoshan.jsp",
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDC.jsp",
+		"/usr/local/tomcat/webapps/examples/jsp/cloud3/index.jsp",
 		"/usr/local/tomcat/webapps/examples/jsp/cloud3/dimka.jsp",
 		"/home/rex/workspace/map_project/uw_event_map/map.sublime-project",
-		"/home/rex/workspace/map_project/uw_event_map/routes/database.js",
 		"/home/rex/workspace/map_project/uw_event_map/routes.js",
 		"/home/rex/workspace/map_project/uw_event_map/views/layout.jade",
 		"/home/rex/workspace/map_project/uw_event_map/public/css/style.styl",
@@ -388,10 +467,8 @@
 		"/home/rex/workspace/map_project/uw_event_map/public/js/controllers.js",
 		"/home/rex/workspace/map_project/uw_event_map/public/js/services.js",
 		"/home/rex/workspace/map_project/uw_event_map/public/js/directives.js",
-		"/home/rex/workspace/map_project/uw_event_map/public/js/app.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/services.js",
 		"/home/rex/workspace/map_project/uw_event_map/compuzz.js",
-		"/home/rex/workspace/map_project/uw_event_map/routes/mainHandler.js",
 		"/home/rex/workspace/map_project/uw_event_map/routes/eventInfoHandler.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/partials/phone-list.html",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/scripts/web-server.js",
@@ -471,7 +548,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			""
@@ -482,6 +559,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dbService",
 			"vdc_details_toolbar",
 			"vdc.txt",
 			"updateLeftTree",
@@ -531,55 +609,56 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/index.jsp",
+					"file": "compuzz.js",
 					"settings":
 					{
-						"buffer_size": 14626,
+						"buffer_size": 969,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1740,
-								1740
+								118,
+								118
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 409.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDC.jsp",
+					"file": "routes.js",
 					"settings":
 					{
-						"buffer_size": 19063,
+						"buffer_size": 642,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								721,
-								721
+								575,
+								575
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -590,51 +669,23 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/overviewVDCRoshan.jsp",
+					"file": "routes/user.js",
 					"settings":
 					{
-						"buffer_size": 18344,
+						"buffer_size": 1389,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1058,
+								1058
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2142.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/mainImports.jsp",
-					"settings":
-					{
-						"buffer_size": 1715,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -643,25 +694,53 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/new.jsp",
+					"buffer": 3,
+					"file": "routes/database.js",
 					"settings":
 					{
-						"buffer_size": 3703,
+						"buffer_size": 2564,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								138,
-								138
+								649,
+								649
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/css/style.styl",
+					"settings":
+					{
+						"buffer_size": 4885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								313,
+								313
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Stylus/Stylus.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -671,76 +750,23 @@
 				},
 				{
 					"buffer": 5,
-					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/newVDC.jsp",
+					"file": "views/index.jade",
 					"settings":
 					{
-						"buffer_size": 16583,
+						"buffer_size": 971,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14660,
-								14660
+								465,
+								465
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 8098.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/vdcGraph.jsp",
-					"settings":
-					{
-						"buffer_size": 7787,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2344,
-								2344
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 357.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/firewalls.jsp",
-					"settings":
-					{
-						"buffer_size": 17529,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								64,
-								64
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -750,11 +776,145 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "/usr/local/tomcat/webapps/examples/jsp/cloud3/usersVDC.jsp",
+					"buffer": 6,
+					"file": "views/event-form-bubble.jade",
 					"settings":
 					{
-						"buffer_size": 1625,
+						"buffer_size": 1825,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1411,
+								1411
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 255.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "views/auth-form.jade",
+					"settings":
+					{
+						"buffer_size": 568,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								553,
+								553
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public/js/controllers.js",
+					"settings":
+					{
+						"buffer_size": 2625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								357,
+								357
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "public/js/services.js",
+					"settings":
+					{
+						"buffer_size": 5519,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								388,
+								388
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "public/js/directives.js",
+					"settings":
+					{
+						"buffer_size": 1416,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								463,
+								463
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 255.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "public/js/map.js",
+					"settings":
+					{
+						"buffer_size": 838,
 						"regions":
 						{
 						},
@@ -767,10 +927,39 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 408.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								211,
+								211
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

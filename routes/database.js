@@ -11,6 +11,62 @@ var c = db.createConnection({
 	password:	'goodegg',
 });
 
+exports.checkname = function(req, res) {
+	var username = c.escape(req.query['name']);
+	c.query('SELECT id FROM user WHERE user_name = '+username, 
+		function(err, rows, fields){
+			if (!err) {
+				console.log(rows);
+				if (rows.length > 0)
+					res.send('hit', 200);
+				else
+					res.send('available', 200);
+
+			} else {
+				console.log(err);
+				res.status(500).end();
+			}
+		});
+};
+
+exports.saveCredentials = function(req, res, next) {
+	var username = c.escape(req.body.username);
+	var password_h = c.escape(req.body.password);	// Hashed password
+	var salt = c.escape(req.body.salt);
+	
+	c.query('INSERT INTO user (`user_name`, `hash`, `salt`, `register_at`, `last_visit_at`) \
+				VALUES ('+username+', '+password_h+', '+salt+', NOW(), NOW())',
+				function(err, rows, fields){
+					if (!err) {
+						next();
+
+					} else {
+						console.log(err);
+						res.status(500).end();
+					}
+				});
+};
+
+exports.checkCredentials = function(req, res, next) {
+	var username = c.escape(req.body.username);
+
+	c.query('SELECT hash, salt FROM user WHERE `user_name`='+username, 
+		function(err, rows, fields){
+			if (!err) {
+				if (rows.length === 0)
+					res.status(401).end();
+				
+				req.body.hash = rows[0].hash;
+				req.body.salt = rows[0].salt;
+				next();
+
+			} else {
+				console.log(err);
+				res.end();
+			}
+		});
+};
+
 exports.fetchTags = function(req, res) {
 	var matchString = c.escape('%' + req.query['match'] + '%');
 	c.query('SELECT * FROM event_tag WHERE tag_name LIKE ' + matchString + ' OR tag_desc LIKE ' + matchString + '',
@@ -25,7 +81,7 @@ exports.fetchTags = function(req, res) {
 			}
 		}
 	);
-}
+};
 
 exports.saveEvent = function(req, res) {
 	var id = c.escape(req.body.id),
@@ -76,4 +132,4 @@ exports.saveEvent = function(req, res) {
 	}
 
 
-}
+};

@@ -2,7 +2,101 @@
 
 angular.module('compuzzControllers', []).
 
-	controller('TagListController', ['$scope', 'dbService',
+	controller('SignupController', ['$scope', '$http', 'queryService',
+		function($scope, $http, backend) {
+			$scope.errorMsg = '';
+			$scope.username = '';
+			$scope.password = '';
+			$scope.email = '';
+
+			$scope.validateUsername = function() {
+				var name = $scope.username;
+
+				// Name cannot be empty
+				if (name === '' || name == null)
+					return false;
+				// Name can only contain valid characters
+				if (!name.match('^[0-9a-zA-Z_]+$'))
+					return false;
+				// Length must be below 16
+				if (name.length > 16)
+					return false;
+
+				// Name must be syntactically valid up until this point, check for uniqueness
+				// Use try/catch to enforace sequential execution
+				try {
+					$http({
+						method: 'GET',
+						url: 'user/checkname',
+						params: {user_name: name}
+					}).success(function(response){
+						return response == 'hit' ? true : false;
+					});
+
+				} catch(e) {
+					console.log(e);
+				}
+			};
+
+			$scope.validatePassword = function() {
+				var password = $scope.password;
+				// Length must be between 8 and 16
+				if (password.length < 8 || password.length > 16) 
+					return false;
+				
+				return true;
+			}
+
+			$scope.validateEmail = function() {
+				var email = $scope.email;
+				// Must be xxx@yyy.zzz
+				if (email.match('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'))
+					return true;
+				else
+					return false;
+			}
+
+			$scope.submitCredential = function() {
+
+			};
+
+			$scope.resetState = function() {
+				$scope.errorMsg = '';
+				$scope.username = '';
+				$scope.password = '';
+				$scope.email = '';
+			};
+		}
+	]).
+
+	controller('LoginController', ['$scope', 'queryService', 
+		function($scope, backend){
+			$scope.errorMsg = '';
+			$scope.username = '';
+			$scope.password = '';
+
+			$scope.submitCredential = function() {
+				// var method = angular.lowercase($scope.method.replace(/\s/g, ""));
+				var params = {
+					username: $scope.username,
+					password: $scope.password
+				};
+
+				if ($scope.method === 'Sign Up')
+					backend.signup.submit(params);
+				else if ($scope.method === 'Log In')
+					backend.login.submit(params);
+			};
+
+			$scope.resetState = function() {
+				$scope.errorMsg = '';
+				$scope.username = '';
+				$scope.password = '';
+			};
+		}
+	]).
+
+	controller('TagListController', ['$scope', 'queryService',
 		function($scope, db){
 			$scope.tags = db.tag.getTags();
 			console.log($scope.tags);
@@ -78,6 +172,6 @@ angular.module('compuzzControllers', []).
 
 	controller('MapController', ['$scope', 'mapService',
 		function($scope, map){
-			map.initRender(document.getElementById('map_canvas'));
+			// map.initRender(document.getElementById('map_canvas'));
 		}
 	]);

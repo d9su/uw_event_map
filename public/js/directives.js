@@ -1,6 +1,59 @@
 'use strict';
 
 angular.module('compuzzDirectives', []).
+	directive('signupForm', function(){
+		var linkFn = function(scope, el, attr) {
+			scope.$watch('username', function(newVal, oldVal) {
+				if (!newVal) return;
+
+				try {
+					var valid = scope.validateUsername();
+					console.log('checking... '+valid);
+
+				} catch (e) {
+
+				}
+
+				if (valid === false) {
+					el.find('.username').addClass('error');
+					// el.find('.username-desc');
+
+				} else {
+					el.find('.username').removeClass('error');
+				}
+			});
+
+			scope.$watch('password', function(newVal, oldVal) {
+				if (!newVal) return;
+
+				var valid = scope.validatePassword();
+				if (valid === false) {
+					el.find('.password').addClass('error');
+					// el.find('.password-desc')
+
+				} else {
+					el.find('.password').removeClass('error');
+				}
+
+			});
+
+			scope.$watch('email', function(newVal, oldVal){
+				if (!newVal) return;
+
+				var valid = scope.validateEmail();
+				if (valid === false) {
+					el.find('.email').addClass('error');
+					// el.find('.email-desc')
+
+				} else {
+					el.find('.email').removeClass('error');
+				}
+			});
+		}
+
+		return linkFn;
+
+	}).
 
 	directive('bubbleForm', function(){
 		var linkFn = function(scope, el, attr) {
@@ -20,15 +73,23 @@ angular.module('compuzzDirectives', []).
 		return linkFn;
 	}).
 
-	directive('navbarBtnGroup', function() {
+	directive('navbar', ['queryService', function(backend) {
 		var linkFn = function(scope, el, attr) {
 			el.find('.create-event').click(function(){
 				$('#event-form-bubble').modal('show');
 			});
+
+			el.find('.log-in').click(function(){
+				$('#login-form').modal('show');
+			});
+
+			el.find('.sign-up').click(function(){
+				$('#signup-form').modal('show');
+			});
 		};
 
 		return linkFn;
-	}).
+	}]).
 
 	directive('tagPopOver', function() {
 		var popOverTitle = 'Tags';

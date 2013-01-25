@@ -1,0 +1,19 @@
+#login-form.modal.hide.fade(ng-controller='LoginController')
+	.modal-header
+		button.close(type='button', data-dismiss='modal')&times;
+		h3 Log In
+
+	.modal-body
+		.row-fluid
+			.span7
+				input.span10(type='text', placeHolder='User Name', value='', ng-model='username')
+				input.span10(type='password', placeHolder='Password', value='', ng-model='password')
+
+			.span5
+				.desc
+					p Log in to browse and edit all your events!
+
+	.modal-footer
+		p.pull-left.text-error {{errorMsg}}
+		button.btn.btn-secondary(data-dismiss='modal', ng-click='resetState()') Cancel
+		button.btn.btn-primary(ng-click='submitCredential()') Log In
