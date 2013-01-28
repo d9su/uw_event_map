@@ -1,6 +1,71 @@
 'use strict';
 
 angular.module('compuzzServices', ['ngResource']).
+	service('userInfoService', ['$http', function($http) {
+		var username;
+		var email;
+		var filterTags = [];
+
+		var checkName = function(params, scope) {
+			$http.post('user/checkname', params).
+				success(function(data, status, headers, config){
+					if (data == 'good')
+						scope.nameAvailable = true;
+					else
+						scope.nameAvailable = false;
+				}).
+				error(function(data, status, headers, config) {
+					if (status >= 400 && status < 500)
+						scope.response = 'clientfault';
+					else if (status >= 500)
+						scope.response = 'serverfault';
+				});
+		}
+
+		var userSignup = function(params, scope) {
+			$http.post('/user/signup', params).
+				success(function(data, status, headers, config) {
+					scope.response = 'ok';
+					username = params.username;
+					email = params.email;
+				}).
+				error(function(data, status, headers, config) {
+					if (status >= 400 && status < 500)
+						scope.response = 'clientfault';
+					else if (status >= 500)
+						scope.response = 'serverfault';
+				});
+		};
+
+		var userLogin = function(params, scope) {
+			$http.post('/user/login', params).
+				success(function(data, status, headers, config) {
+					scope.response = 'ok';
+					username = params.username;
+					email = params.email;
+				}).
+				error(function(data, status, headers, config) {
+					if (status >= 400 && status < 500)
+						scope.response = 'clientfault';
+					else of (status >= 500)
+						scope.response = 'serverfault';
+				});
+		}
+
+		return {
+			setUserName: function(name) { username = name; },
+			setEmail: function(newEmail) { email = newEmail; },
+
+			getUserName: function() { return username; },
+			getEmail: function() { return email; },
+			getFilterTags: function() { return filterTags; },
+
+			signup: userSignup,
+			login: userLogin,
+			checkName: checkName
+		}
+	}]).
+
 	service('queryService', ['$http', '$resource', function($http, $resource){
 		var tagOps = $resource('/tags', {}, {
 			getTags: { method: 'GET', isArray: true },
@@ -11,33 +76,9 @@ angular.module('compuzzServices', ['ngResource']).
 			save: { method: 'POST' }
 		});
 
-		var userSignup = $resource('/user/signup', {}, {
-			submit: { method: 'POST' }
-		});
-
-		var userLogin = $resource('user/login', {}, {
-			submit: { method: 'POST' }
-		});
-
-		var getSignupForm = function(callback) {
-			$http.get('/user/signup')
-				.success(callback)
-				.error(function(data, status, headers, config){});
-		};
-
-		var getLoginForm = function(callback) {
-			$http.get('/user/login')
-				.success(callback)
-				.error(function(data, status, headers, config){});	
-		}
-
 		return {
 			tag: tagOps,
 			event: eventOps,
-			signup: userSignup,
-			login: userLogin,
-			signupForm: getSignupForm,
-			loginForm: getLoginForm
 		}
 
 	}]).
@@ -65,7 +106,7 @@ angular.module('compuzzServices', ['ngResource']).
 
 	}]).
 
-	service('createEventService', ['$rootScope', 'queryService', function($rootScope, db){
+	service('createEventService', ['queryService', function(db){
 		var dataOk = false;
 		var eventId = -1;
 		var eventName = "";

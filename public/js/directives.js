@@ -3,12 +3,37 @@
 angular.module('compuzzDirectives', []).
 	directive('signupForm', function(){
 		var linkFn = function(scope, el, attr) {
+			scope.$watch('response', function(newVal, oldVal) {
+				if (typeof newVal == 'undefined') return;
+
+				if (newVal == 'serverfault') {
+					el.find('.text-error').html('Server error (it\'s not your fault :P), please try again later.');
+				} else if (newVal == 'clientfault') {
+					el.find('.text-error').html('Already logged in! Logout if want to sign up new user.');
+				} else if (newVal == 'ok') {
+					el.modal('hide');
+				} else {
+					// Unsupported response code!
+					console.log('Unsupported response: ' + newVal);
+				}
+			});
+
+			scope.$watch('nameAvailable', function(newVal, oldVal) {
+				if (typeof newVal == 'undefined') return;
+
+				if (newVal === true) {
+					el.find('.name-avail').removeClass('text-error').addClass('text-success').html('User name is available!');
+					console.log('valid!');
+				} else if (newVal === false) {
+					el.find('.name-avail').removeClass('text-success').addClass('text-error').html('User name is already taken!');
+				}
+			});
+
 			scope.$watch('username', function(newVal, oldVal) {
 				if (!newVal) return;
 
 				try {
 					var valid = scope.validateUsername();
-					console.log('checking... '+valid);
 
 				} catch (e) {
 
@@ -16,7 +41,8 @@ angular.module('compuzzDirectives', []).
 
 				if (valid === false) {
 					el.find('.username').addClass('error');
-					// el.find('.username-desc');
+					el.find('.name-avail').removeClass('text-success').addClass('text-error').html('User name is invalid');
+					scope.nameAvailable = null;
 
 				} else {
 					el.find('.username').removeClass('error');

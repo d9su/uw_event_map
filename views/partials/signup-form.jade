@@ -7,14 +7,17 @@
 		.row-fluid
 			.span7
 				input.username.span10(type='text', placeHolder='User Name', value='', ng-model='username')
+				span.misc-desc.name-avail &nbsp;
 				input.password.span10(type='password', placeHolder='Password', value='', ng-model='password')
+				span.misc-desc.psw-strength &nbsp;
 				input.email.span10(type='text', placeHolder='Email', value='', ng-model='email')
+				span.misc-desc.email-avail &nbsp;
 
 			.span5
 				.desc
 					span.misc-desc.username-desc
 						b User name 
-						| can contain [a-z, A-Z, '_', 0-9], length below 16 and must be unique.
+						| can contain a-z, A-Z, '_', 0-9 (case insensitive), length below 16 and must be unique.
 					span.misc-desc.password-desc
 						b Password 
 						| length is between 6 and 16 (case sensitive). You are only typing it once so be careful!

@@ -2,12 +2,14 @@
 
 angular.module('compuzzControllers', []).
 
-	controller('SignupController', ['$scope', '$http', 'queryService',
-		function($scope, $http, backend) {
+	controller('SignupController', ['$scope', '$http', 'userInfoService',
+		function($scope, $http, userService) {
 			$scope.errorMsg = '';
 			$scope.username = '';
 			$scope.password = '';
 			$scope.email = '';
+			$scope.response;
+			$scope.nameAvailable;
 
 			$scope.validateUsername = function() {
 				var name = $scope.username;
@@ -23,25 +25,13 @@ angular.module('compuzzControllers', []).
 					return false;
 
 				// Name must be syntactically valid up until this point, check for uniqueness
-				// Use try/catch to enforace sequential execution
-				try {
-					$http({
-						method: 'GET',
-						url: 'user/checkname',
-						params: {user_name: name}
-					}).success(function(response){
-						return response == 'hit' ? true : false;
-					});
-
-				} catch(e) {
-					console.log(e);
-				}
+				userService.checkName({username: name}, $scope);
 			};
 
 			$scope.validatePassword = function() {
 				var password = $scope.password;
-				// Length must be between 8 and 16
-				if (password.length < 8 || password.length > 16) 
+				// Length must be between 6 and 16
+				if (password.length < 6 || password.length > 16) 
 					return false;
 				
 				return true;
@@ -57,7 +47,13 @@ angular.module('compuzzControllers', []).
 			}
 
 			$scope.submitCredential = function() {
+				var params = {
+					username: $scope.username,
+					email: $scope.email,
+					password: $scope.password
+				};
 
+				userService.signup(params, $scope);
 			};
 
 			$scope.resetState = function() {
@@ -69,23 +65,20 @@ angular.module('compuzzControllers', []).
 		}
 	]).
 
-	controller('LoginController', ['$scope', 'queryService', 
-		function($scope, backend){
+	controller('LoginController', ['$scope', 'userInfoService', 
+		function($scope, userService){
 			$scope.errorMsg = '';
 			$scope.username = '';
 			$scope.password = '';
+			$scope.responseCode;
 
 			$scope.submitCredential = function() {
-				// var method = angular.lowercase($scope.method.replace(/\s/g, ""));
 				var params = {
 					username: $scope.username,
 					password: $scope.password
 				};
 
-				if ($scope.method === 'Sign Up')
-					backend.signup.submit(params);
-				else if ($scope.method === 'Log In')
-					backend.login.submit(params);
+				userService.login(params, $scope);
 			};
 
 			$scope.resetState = function() {

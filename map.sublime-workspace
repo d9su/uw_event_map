@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"ht",
+				"html"
+			],
+			[
 				"user",
 				"user_name"
 			],
@@ -295,7 +299,15 @@
 			"file": "routes.js",
 			"settings":
 			{
-				"buffer_size": 642,
+				"buffer_size": 717,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/mainHandler.js",
+			"settings":
+			{
+				"buffer_size": 270,
 				"line_ending": "Unix"
 			}
 		},
@@ -311,47 +323,7 @@
 			"file": "routes/database.js",
 			"settings":
 			{
-				"buffer_size": 2564,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/css/style.styl",
-			"settings":
-			{
-				"buffer_size": 4885,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/index.jade",
-			"settings":
-			{
-				"buffer_size": 971,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/event-form-bubble.jade",
-			"settings":
-			{
-				"buffer_size": 1825,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/auth-form.jade",
-			"settings":
-			{
-				"buffer_size": 568,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/js/controllers.js",
-			"settings":
-			{
-				"buffer_size": 2625,
+				"buffer_size": 2951,
 				"line_ending": "Unix"
 			}
 		},
@@ -359,7 +331,15 @@
 			"file": "public/js/services.js",
 			"settings":
 			{
-				"buffer_size": 5519,
+				"buffer_size": 5920,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/controllers.js",
+			"settings":
+			{
+				"buffer_size": 4295,
 				"line_ending": "Unix"
 			}
 		},
@@ -367,23 +347,55 @@
 			"file": "public/js/directives.js",
 			"settings":
 			{
-				"buffer_size": 1416,
+				"buffer_size": 2473,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/js/map.js",
+			"file": "public/css/style.styl",
 			"settings":
 			{
-				"buffer_size": 838,
+				"buffer_size": 5179,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "package.json",
+			"file": "public/js/app.js",
 			"settings":
 			{
-				"buffer_size": 218,
+				"buffer_size": 425,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/event-form.jade",
+			"settings":
+			{
+				"buffer_size": 1825,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/login-form.jade",
+			"settings":
+			{
+				"buffer_size": 627,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/signup-form.jade",
+			"settings":
+			{
+				"buffer_size": 1112,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/index.jade",
+			"settings":
+			{
+				"buffer_size": 1037,
 				"line_ending": "Unix"
 			}
 		}
@@ -440,9 +452,15 @@
 	},
 	"file_history":
 	[
+		"/home/rex/workspace/map_project/uw_event_map/routes/eventInfoHandler.js",
+		"/home/rex/workspace/map_project/uw_event_map/views/signup-form.jade",
+		"/home/rex/workspace/map_project/uw_event_map/views/login-form.jade",
+		"/home/rex/workspace/map_project/uw_event_map/views/event-form-bubble.jade",
+		"/home/rex/workspace/map_project/uw_event_map/views/auth-form.jade",
+		"/home/rex/workspace/map_project/uw_event_map/package.json",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/map.js",
 		"/home/rex/workspace/map_project/uw_event_map/routes/database.js",
 		"/home/rex/workspace/map_project/uw_event_map/public/js/app.js",
-		"/home/rex/workspace/map_project/uw_event_map/views/signup-form.jade",
 		"/home/rex/workspace/map_project/uw_event_map/public/js/login.js",
 		"/home/rex/workspace/map_project/uw_event_map/views/login-progress.jade",
 		"/home/rex/workspace/map_project/uw_event_map/routes/mainHandler.js",
@@ -461,21 +479,17 @@
 		"/home/rex/workspace/map_project/uw_event_map/routes.js",
 		"/home/rex/workspace/map_project/uw_event_map/views/layout.jade",
 		"/home/rex/workspace/map_project/uw_event_map/public/css/style.styl",
-		"/home/rex/workspace/map_project/uw_event_map/views/event-form-bubble.jade",
 		"/home/rex/workspace/map_project/uw_event_map/views/index.jade",
-		"/home/rex/workspace/map_project/uw_event_map/public/js/map.js",
 		"/home/rex/workspace/map_project/uw_event_map/public/js/controllers.js",
 		"/home/rex/workspace/map_project/uw_event_map/public/js/services.js",
 		"/home/rex/workspace/map_project/uw_event_map/public/js/directives.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/services.js",
 		"/home/rex/workspace/map_project/uw_event_map/compuzz.js",
-		"/home/rex/workspace/map_project/uw_event_map/routes/eventInfoHandler.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/partials/phone-list.html",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/scripts/web-server.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/app.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/controllers.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/phones/dell-streak-7.json",
-		"/home/rex/workspace/map_project/uw_event_map/package.json",
 		"/home/rex/workspace/map_project/uw_event_map/routes/user.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/index.html",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/partials/phone-detail.html",
@@ -609,7 +623,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -635,7 +649,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 204.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -645,15 +659,15 @@
 					"file": "routes.js",
 					"settings":
 					{
-						"buffer_size": 642,
+						"buffer_size": 717,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								575,
-								575
+								450,
+								450
 							]
 						],
 						"settings":
@@ -669,6 +683,32 @@
 				},
 				{
 					"buffer": 2,
+					"file": "routes/mainHandler.js",
+					"settings":
+					{
+						"buffer_size": 270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								246,
+								246
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "routes/user.js",
 					"settings":
 					{
@@ -685,7 +725,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -694,19 +735,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "routes/database.js",
 					"settings":
 					{
-						"buffer_size": 2564,
+						"buffer_size": 2951,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								649,
-								649
+								502,
+								502
 							]
 						],
 						"settings":
@@ -715,25 +756,106 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 102.0,
+						"translation.y": 51.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "public/css/style.styl",
+					"buffer": 5,
+					"file": "public/js/services.js",
 					"settings":
 					{
-						"buffer_size": 4885,
+						"buffer_size": 5920,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								313,
-								313
+								800,
+								800
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/js/controllers.js",
+					"settings":
+					{
+						"buffer_size": 4295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1356,
+								1356
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 468.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/js/directives.js",
+					"settings":
+					{
+						"buffer_size": 2473,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1076,
+								1076
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 561.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public/css/style.styl",
+					"settings":
+					{
+						"buffer_size": 5179,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								252,
+								252
 							]
 						],
 						"settings":
@@ -749,132 +871,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "views/index.jade",
-					"settings":
-					{
-						"buffer_size": 971,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								465,
-								465
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "views/event-form-bubble.jade",
-					"settings":
-					{
-						"buffer_size": 1825,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1411,
-								1411
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 255.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "views/auth-form.jade",
-					"settings":
-					{
-						"buffer_size": 568,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								553,
-								553
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "public/js/controllers.js",
-					"settings":
-					{
-						"buffer_size": 2625,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								357,
-								357
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 9,
-					"file": "public/js/services.js",
+					"file": "public/js/app.js",
 					"settings":
 					{
-						"buffer_size": 5519,
+						"buffer_size": 425,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								388,
-								388
+								122,
+								122
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -884,37 +898,10 @@
 				},
 				{
 					"buffer": 10,
-					"file": "public/js/directives.js",
+					"file": "views/partials/event-form.jade",
 					"settings":
 					{
-						"buffer_size": 1416,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								463,
-								463
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 255.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "public/js/map.js",
-					"settings":
-					{
-						"buffer_size": 838,
+						"buffer_size": 1825,
 						"regions":
 						{
 						},
@@ -927,7 +914,34 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "views/partials/login-form.jade",
+					"settings":
+					{
+						"buffer_size": 627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								556,
+								556
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -938,25 +952,51 @@
 				},
 				{
 					"buffer": 12,
-					"file": "package.json",
+					"file": "views/partials/signup-form.jade",
 					"settings":
 					{
-						"buffer_size": 218,
+						"buffer_size": 1112,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								211,
-								211
+								732,
+								732
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "views/index.jade",
+					"settings":
+					{
+						"buffer_size": 1037,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								243,
+								243
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

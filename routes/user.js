@@ -6,10 +6,15 @@ var crypto = require('crypto');
 
 exports.setSession = function(req, res) {
 	req.session.username = req.body.username;
-	res.status(200).send('success');
+	req.session.email = req.body.email;
+	res.send(200, 'ok');
 };
 
 exports.signup = function(req, res, next) {
+	if (typeof req.session.username != 'undefined') {
+		res.send(403, 'forbidden');
+	}
+
 	var username = req.body.username;
 	var password = req.body.password;
 	console.log(username+':'+password);
@@ -26,14 +31,14 @@ exports.signup = function(req, res, next) {
 
 			} else {
 				console.log(e);
-				res.status(500).end();
+				res.send(500, 'serverfault');
 			}
 
 		});
 
 	} catch (e) {
 		console.log(e);
-		res.status(500).end();
+		res.send(500, 'serverfault');
 	}
 };
 
@@ -54,12 +59,12 @@ exports.login = function(req, res, next) {
 
 			} else {
 				console.log('Wrong password');
-				res.status(401).send('bad password');
+				res.send(401, 'bad password');
 			}
 
 		} else {
 			console.log(e);
-			res.status(500).end();
+			res.send(500, 'serverfault');
 		}
 	});
 }

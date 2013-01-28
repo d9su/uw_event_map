@@ -20,7 +20,7 @@ var database = require('./routes/database')
 	app.get('/tags', database.fetchTags);
 
 	// Check username
-	app.get('/user/checkname', database.checkname);
+	app.post('/user/checkname', database.checkname);
 
 	// TODO: User signup and login
 	app.post('/user/signup', user.signup, database.saveCredentials, user.setSession);

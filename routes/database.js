@@ -12,37 +12,39 @@ var c = db.createConnection({
 });
 
 exports.checkname = function(req, res) {
-	var username = c.escape(req.query['name']);
+	var username = c.escape(req.body.username);
 	c.query('SELECT id FROM user WHERE user_name = '+username, 
 		function(err, rows, fields){
 			if (!err) {
 				console.log(rows);
 				if (rows.length > 0)
-					res.send('hit', 200);
+					res.send(200, 'bad');
 				else
-					res.send('available', 200);
+					res.send(200, 'good');
 
 			} else {
 				console.log(err);
-				res.status(500).end();
+				res.send(500, 'serverfault');
 			}
 		});
 };
 
 exports.saveCredentials = function(req, res, next) {
 	var username = c.escape(req.body.username);
+	var email = c.escape(req.body.email);
 	var password_h = c.escape(req.body.password);	// Hashed password
 	var salt = c.escape(req.body.salt);
 	
-	c.query('INSERT INTO user (`user_name`, `hash`, `salt`, `register_at`, `last_visit_at`) \
-				VALUES ('+username+', '+password_h+', '+salt+', NOW(), NOW())',
+	c.query('INSERT INTO user (`user_name`, `email`, `hash`, `salt`, `register_at`, `last_visit_at`) \
+				VALUES ('+username+', '+email+', '+password_h+', '+salt+', NOW(), NOW())',
 				function(err, rows, fields){
 					if (!err) {
 						next();
 
 					} else {
 						console.log(err);
-						res.status(500).end();
+						res.send('serverfault');
+						res.send(500);
 					}
 				});
 };
@@ -50,19 +52,20 @@ exports.saveCredentials = function(req, res, next) {
 exports.checkCredentials = function(req, res, next) {
 	var username = c.escape(req.body.username);
 
-	c.query('SELECT hash, salt FROM user WHERE `user_name`='+username, 
+	c.query('SELECT email, hash, salt, FROM user WHERE `user_name`='+username, 
 		function(err, rows, fields){
 			if (!err) {
 				if (rows.length === 0)
 					res.status(401).end();
 				
+				req.body.email = row[0].email;
 				req.body.hash = rows[0].hash;
 				req.body.salt = rows[0].salt;
 				next();
 
 			} else {
 				console.log(err);
-				res.end();
+				res.send(500, 'serverfault');
 			}
 		});
 };
@@ -77,7 +80,7 @@ exports.fetchTags = function(req, res) {
 
 			} else {
 				console.log(err);
-				res.end();
+				res.send(500, 'serverfault');
 			}
 		}
 	);
@@ -121,8 +124,8 @@ exports.saveEvent = function(req, res) {
 				}
 			}).
 			on('error', function(error){
-				console.log('error')
-				res.end()
+				console.log('error');
+				res.send(500, 'serverfault');
 			});
 
 

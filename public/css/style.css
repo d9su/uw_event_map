@@ -13,6 +13,10 @@ input.error {
   -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #d59392 !important;
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #d59392 !important;
 }
+input + .misc-desc {
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
 #event-form-bubble .event-type-selection-toggle {
   margin: 0;
   padding-left: 32px;
