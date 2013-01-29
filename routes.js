@@ -23,9 +23,9 @@ var database = require('./routes/database')
 	app.post('/user/checkname', database.checkname);
 
 	// TODO: User signup and login
-	app.post('/user/signup', user.signup, database.saveCredentials, user.setSession);
-	app.post('/user/login', database.checkCredentials, user.login, user.setSession);
+	app.post('/user/signup', user.checkUnlogged, user.signup, database.saveCredentials, user.setSession);
+	app.post('/user/login', user.checkUnlogged, database.checkCredentials, user.login, user.setSession);
 
 	// Post event info
-	app.post('/saveEvent', database.saveEvent);
+	app.post('/saveEvent', user.authorize, database.saveEvent);
  }

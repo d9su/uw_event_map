@@ -52,13 +52,13 @@ exports.saveCredentials = function(req, res, next) {
 exports.checkCredentials = function(req, res, next) {
 	var username = c.escape(req.body.username);
 
-	c.query('SELECT email, hash, salt, FROM user WHERE `user_name`='+username, 
+	c.query('SELECT email, hash, salt FROM user WHERE `user_name`='+username, 
 		function(err, rows, fields){
 			if (!err) {
 				if (rows.length === 0)
 					res.status(401).end();
 				
-				req.body.email = row[0].email;
+				req.body.email = rows[0].email;
 				req.body.hash = rows[0].hash;
 				req.body.salt = rows[0].salt;
 				next();
