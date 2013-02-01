@@ -1,4 +1,4 @@
-#event-form-bubble.modal.hide.fade(bubble-form, ng-controller='CreateEventController')
+#event-form.modal.hide.fade(event-form, ng-controller='CreateEventController')
 	//- .marker_bg.bg_info 
 	.modal-header
 		button.close(type='button', data-dismiss='modal')&times;
@@ -29,8 +29,31 @@
 								span.icon-option.icon-food
 								span Refreshment
 
+				.date-display(date-picker, ng-model='eventDetail.start')
+					.datetimepicker.input-append
+						input.hidden(data-format='yyyy-MM-dd HH:mm:ss PP', type='text')
+						span.add-on
+							i(data-time-icon='icon-time', data-date-icon='icon-calendar')
+					.date.ib
+						.label.label-success.ib
+							span From
+						.val.ib
+							span {{eventDetail.start}}
+
+				.date-display(date-picker, ng-model='eventDetail.end')
+					.datetimepicker.input-append
+						input.hidden(ng-model='eventDetail.end', data-format="yyyy-MM-dd HH:mm:ss PP", type="text")
+						span.add-on
+							i(data-time-icon="icon-time", data-date-icon="icon-calendar")
+					.date.ib
+						.label.label-success.ib
+							span To
+						.val.ib
+							span {{eventDetail.end}}
+
 				textarea.span12(rows='5', placeHolder='Description', ng-model='eventDetail.desc')
 				span.misc-desc {{remaining()}}
+
 				input.span12(tag-search type='text', placeHolder='Tags', value='')
 				.selected-tags
 				.candidate-tags

@@ -3,7 +3,8 @@
  */
 var mainHandler = require('./routes/mainHandler');
 var user = require('./routes/user');
-var database = require('./routes/database')
+var event = require('./routes/event');
+var database = require('./routes/database');
 
 /**
  * Routes
@@ -20,12 +21,16 @@ var database = require('./routes/database')
 	app.get('/tags', database.fetchTags);
 
 	// Check username
-	app.post('/user/checkname', database.checkname);
+	app.post('/user/checkname', user.checkName);
+	app.post('/user/checkemail', user.checkEmail);
 
 	// TODO: User signup and login
-	app.post('/user/signup', user.checkUnlogged, user.signup, database.saveCredentials, user.setSession);
-	app.post('/user/login', user.checkUnlogged, database.checkCredentials, user.login, user.setSession);
+	app.post('/user/signup', user.checkUnlogged, user.signup, user.setSession);
+	app.post('/user/login', user.checkUnlogged, user.login, user.setSession);
 
-	// Post event info
-	app.post('/saveEvent', user.authorize, database.saveEvent);
+	// event info
+	app.get('/event', user.authorize, database.getEvent);
+	app.post('/event', user.authorize, event.saveEvent);
+	app.put('/event', user.authorize, database.updateEvent);
+	app.delete('/event', user.authorize, database.deleteEvent)
  }

@@ -1,13 +1,18 @@
 'use strict';
 
 angular.module('compuzzServices', ['ngResource']).
+
+	/**
+	 *	User Info
+	 *	Contains user identity info and methods for auth operations
+	 */
 	service('userInfoService', ['$http', function($http) {
 		var username;
 		var email;
 		var filterTags = [];
 
-		var checkName = function(params, scope) {
-			$http.post('user/checkname', params).
+		var checkName = function(name, scope) {
+			$http.post('user/checkname', {username: name}).
 				success(function(data, status, headers, config){
 					if (data == 'good')
 						scope.nameAvailable = true;
@@ -15,12 +20,30 @@ angular.module('compuzzServices', ['ngResource']).
 						scope.nameAvailable = false;
 				}).
 				error(function(data, status, headers, config) {
-					if (status >= 400 && status < 500)
-						scope.response = 'clientfault';
-					else if (status >= 500)
-						scope.response = 'serverfault';
+					// We want to get away with error when just checking for username
+					// if (status >= 400 && status < 500)
+					// 	scope.response = 'clientfault';
+					// else if (status >= 500)
+					// 	scope.response = 'serverfault';
 				});
-		}
+		};
+
+		var checkEmail = function(email, scope) {
+			$http.post('user/checkemail', {email: email}).
+				success(function(data, status, headers, config){
+					if (data == 'good')
+						scope.emailAvailable = true;
+					else
+						scope.emailAvailable = false;
+				}).
+				error(function(data, status, headers, config) {
+					// We want to get away with error when just checking for username
+					// if (status >= 400 && status < 500)
+					// 	scope.response = 'clientfault';
+					// else if (status >= 500)
+					// 	scope.response = 'serverfault';
+				});
+		};
 
 		var userSignup = function(params, scope) {
 			$http.post('/user/signup', params).
@@ -45,12 +68,13 @@ angular.module('compuzzServices', ['ngResource']).
 					email = params.email;
 				}).
 				error(function(data, status, headers, config) {
+					console.log(status);
 					if (status >= 400 && status < 500)
 						scope.response = 'clientfault';
-					else of (status >= 500)
+					else if (status >= 500)
 						scope.response = 'serverfault';
 				});
-		}
+		};
 
 		return {
 			setUserName: function(name) { username = name; },
@@ -62,18 +86,26 @@ angular.module('compuzzServices', ['ngResource']).
 
 			signup: userSignup,
 			login: userLogin,
-			checkName: checkName
-		}
+			checkName: checkName,
+			checkEmail: checkEmail
+		};
 	}]).
 
+
+	/**
+	 *	Query Service
+	 *	Contains methods to connect to backend server and to fetch from database
+	 */ 
 	service('queryService', ['$http', '$resource', function($http, $resource){
 		var tagOps = $resource('/tags', {}, {
 			getTags: { method: 'GET', isArray: true },
 			// matchTags: { method: 'GET', params: {}, isArray: true }
 		});
 
-		var eventOps = $resource('/saveEvent', {}, {
-			save: { method: 'POST' }
+		var eventOps = $resource('/event', {}, {
+			save: { method: 'POST' },
+			update: { method: 'PUT' },
+			fetch: { method: 'GET' }
 		});
 
 		return {
@@ -83,6 +115,11 @@ angular.module('compuzzServices', ['ngResource']).
 
 	}]).
 
+
+	/**
+	 *	Tag Search
+	 *	
+	 */ 
 	service('tagSearchService', ['queryService', function(db){
 		var matchedTags = [];
 		var timer = 0;
@@ -106,31 +143,48 @@ angular.module('compuzzServices', ['ngResource']).
 
 	}]).
 
+
+	/**
+	 *	Create Event
+	 *	Contains data for event in edit and methods for saving it into database
+	 */ 
 	service('createEventService', ['queryService', function(db){
 		var dataOk = false;
 		var eventId = -1;
-		var eventName = "";
-		var eventDesc = "";
-		var eventType = "info";
+		var eventName = '';
+		var eventDesc = '';
+		var eventType = 'info';
+		var eventStart = '';
+		var eventEnd = '';
 		var eventTags = [];
 
 		var reset = function() {
 			dataOk = false;
 			eventId = -1;
-			eventName = "";
-			eventDesc = "";
-			eventType = "info";
+			eventName = '';
+			eventDesc = '';
+			eventType = 'info';
+			eventStart = '';
+			eventEnd = '';
+			eventTags = [];
 		};
 
-		var saveEvent = function() {
-			console.log('Saving to server...');
-			db.event.save({
-				id: eventId,
-				name: eventName,
-				type: eventType,
-				desc: eventDesc
-			});
-			console.log('Saved');
+		var saveEvent = function(scope) {
+			db.event.save({id: eventId, name: eventName, type: eventType, desc: eventDesc, start: eventStart, end: eventEnd}, 
+				// Success callback
+				function(data){
+					scope.response = 'ok';
+				}, 
+
+				// Error callback
+				function(data){
+					if (data.status >= 400 && data.status < 500)
+						scope.response = 'clientfault';
+					else if (data.status >= 500)
+						scope.response = 'serverfault';
+				}
+			);
+
 			reset();
 		};
 
@@ -149,19 +203,26 @@ angular.module('compuzzServices', ['ngResource']).
 				eventDesc = event.desc;
 				eventType = event.type;
 				eventTags = event.tags;
+				eventStart = event.start;
+				eventEnd = event.end;
 				dataOk = true;
 			},
 
 			isOk: function() { return dataOk; },
-			save: function() { 
+			save: function(scope) { 
 				if (dataOk) {
-					saveEvent();
+					saveEvent(scope);
 				}
 			}
 
 		}
 	}]).
 
+
+	/**
+	 *	Map Service
+	 *	Interface and wrapper for Google Map API, contains methods for interacting with Google Map
+	 */ 
 	service('mapService', ['createEventService', function(newEvent){
 		// Map Info
 		var map;

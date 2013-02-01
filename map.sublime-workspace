@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"username"
+			],
+			[
+				"reg",
+				"register_at"
+			],
+			[
+				"ex",
+				"exports"
+			],
+			[
 				"check",
 				"checkName"
 			],
@@ -42,10 +54,6 @@
 			[
 				"ht",
 				"html"
-			],
-			[
-				"user",
-				"user_name"
 			],
 			[
 				"passw",
@@ -331,7 +339,7 @@
 			"file": "routes.js",
 			"settings":
 			{
-				"buffer_size": 718,
+				"buffer_size": 931,
 				"line_ending": "Unix"
 			}
 		},
@@ -347,7 +355,7 @@
 			"file": "routes/user.js",
 			"settings":
 			{
-				"buffer_size": 1585,
+				"buffer_size": 2796,
 				"line_ending": "Unix"
 			}
 		},
@@ -355,7 +363,7 @@
 			"file": "routes/database.js",
 			"settings":
 			{
-				"buffer_size": 3137,
+				"buffer_size": 4794,
 				"line_ending": "Unix"
 			}
 		},
@@ -363,7 +371,7 @@
 			"file": "public/js/services.js",
 			"settings":
 			{
-				"buffer_size": 7111,
+				"buffer_size": 7826,
 				"line_ending": "Unix"
 			}
 		},
@@ -371,7 +379,7 @@
 			"file": "public/js/controllers.js",
 			"settings":
 			{
-				"buffer_size": 4107,
+				"buffer_size": 4028,
 				"line_ending": "Unix"
 			}
 		},
@@ -379,7 +387,31 @@
 			"file": "public/js/directives.js",
 			"settings":
 			{
-				"buffer_size": 3522,
+				"buffer_size": 4968,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/signup-form.jade",
+			"settings":
+			{
+				"buffer_size": 1247,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/event-form.jade",
+			"settings":
+			{
+				"buffer_size": 1824,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/login-form.jade",
+			"settings":
+			{
+				"buffer_size": 639,
 				"line_ending": "Unix"
 			}
 		},
@@ -388,30 +420,6 @@
 			"settings":
 			{
 				"buffer_size": 5238,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/partials/event-form.jade",
-			"settings":
-			{
-				"buffer_size": 1825,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/partials/signup-form.jade",
-			"settings":
-			{
-				"buffer_size": 1243,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/partials/login-form.jade",
-			"settings":
-			{
-				"buffer_size": 627,
 				"line_ending": "Unix"
 			}
 		},
@@ -684,15 +692,15 @@
 					"file": "routes.js",
 					"settings":
 					{
-						"buffer_size": 718,
+						"buffer_size": 931,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								452,
-								452
+								495,
+								495
 							]
 						],
 						"settings":
@@ -737,15 +745,15 @@
 					"file": "routes/user.js",
 					"settings":
 					{
-						"buffer_size": 1585,
+						"buffer_size": 2796,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								885,
-								885
+								943,
+								943
 							]
 						],
 						"settings":
@@ -754,7 +762,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 306.0,
+						"translation.y": 301.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -764,15 +772,15 @@
 					"file": "routes/database.js",
 					"settings":
 					{
-						"buffer_size": 3137,
+						"buffer_size": 4794,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								985,
-								985
+								1295,
+								1295
 							]
 						],
 						"settings":
@@ -781,7 +789,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 595.0,
+						"translation.y": 255.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -791,15 +799,15 @@
 					"file": "public/js/services.js",
 					"settings":
 					{
-						"buffer_size": 7111,
+						"buffer_size": 7826,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1386,
-								1386
+								1274,
+								1274
 							]
 						],
 						"settings":
@@ -808,7 +816,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 110.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -818,15 +826,15 @@
 					"file": "public/js/controllers.js",
 					"settings":
 					{
-						"buffer_size": 4107,
+						"buffer_size": 4028,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1646,
-								1646
+								1300,
+								1300
 							]
 						],
 						"settings":
@@ -835,7 +843,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 255.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -845,15 +853,15 @@
 					"file": "public/js/directives.js",
 					"settings":
 					{
-						"buffer_size": 3522,
+						"buffer_size": 4968,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								479,
-								479
+								2491,
+								2491
 							]
 						],
 						"settings":
@@ -869,6 +877,87 @@
 				},
 				{
 					"buffer": 8,
+					"file": "views/partials/signup-form.jade",
+					"settings":
+					{
+						"buffer_size": 1247,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								449,
+								449
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "views/partials/event-form.jade",
+					"settings":
+					{
+						"buffer_size": 1824,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								203,
+								203
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 306.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "views/partials/login-form.jade",
+					"settings":
+					{
+						"buffer_size": 639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
 					"file": "public/css/style.styl",
 					"settings":
 					{
@@ -891,87 +980,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 19.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "views/partials/event-form.jade",
-					"settings":
-					{
-						"buffer_size": 1825,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "views/partials/signup-form.jade",
-					"settings":
-					{
-						"buffer_size": 1243,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								740,
-								740
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "views/partials/login-form.jade",
-					"settings":
-					{
-						"buffer_size": 627,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								430,
-								430
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

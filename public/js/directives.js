@@ -4,33 +4,42 @@ angular.module('compuzzDirectives', []).
 	directive('signupForm', function(){
 		var linkFn = function(scope, el, attr) {
 			scope.$watch('response', function(newVal, oldVal) {
-				if (typeof newVal == 'undefined') return;
+				if (oldVal === newVal) return;
 
 				if (newVal == 'serverfault') {
-					el.find('.text-error').html('Server error (it\'s not your fault :P), please try again later.');
+					scope.errorMsg = 'Server error (it\'s not your fault :P), please try again later.';
 				} else if (newVal == 'clientfault') {
-					el.find('.text-error').html('Already logged in! Logout if want to sign up new user.');
+					 scope.errorMsg = 'Already logged in! Logout if want to sign up new user.';
 				} else if (newVal == 'ok') {
 					el.modal('hide');
 				} else {
 					// Unsupported response code!
-					console.log('Unsupported response: ' + newVal);
+					console.log('Unrecognized response: ' + newVal);
 				}
 			});
 
 			scope.$watch('nameAvailable', function(newVal, oldVal) {
-				if (typeof newVal == 'undefined') return;
+				if (oldVal === newVal) return;
 
 				if (newVal === true) {
 					el.find('.name-avail').removeClass('text-error').addClass('text-success').html('User name is available!');
-					console.log('valid!');
 				} else if (newVal === false) {
 					el.find('.name-avail').removeClass('text-success').addClass('text-error').html('User name is already taken!');
 				}
 			});
 
+			scope.$watch('emailAvailable', function(newVal, oldVal) {
+				if (oldVal === newVal) return;
+
+				if (newVal === true) {
+					el.find('.email-avail').removeClass('text-error').addClass('text-success').html('Email is available!');
+				} else if (newVal === false) {
+					el.find('.email-avail').removeClass('text-success').addClass('text-error').html('Email is already taken!');
+				}
+			});
+
 			scope.$watch('username', function(newVal, oldVal) {
-				if (!newVal) return;
+				if (oldVal === newVal) return;
 
 				try {
 					var valid = scope.validateUsername();
@@ -50,15 +59,22 @@ angular.module('compuzzDirectives', []).
 			});
 
 			scope.$watch('password', function(newVal, oldVal) {
-				if (!newVal) return;
+				if (oldVal === newVal) return;
 
 				var valid = scope.validatePassword();
 				if (valid === false) {
 					el.find('.password').addClass('error');
-					// el.find('.password-desc')
+					el.find('.psw-strength').removeClass('text-success').addClass('text-error').html('Length too short or too long');
 
 				} else {
 					el.find('.password').removeClass('error');
+					el.find('.psw-strength').removeClass('text-error').addClass('text-success');
+					if (newVal.length < 9)
+						el.find('.psw-strength').html('Weak');
+					else if (newVal.length < 13)
+						el.find('.psw-strength').html('Moderate');
+					else if (newVal.length < 17)
+						el.find('.psw-strength').html('Strong');
 				}
 
 			});
@@ -69,7 +85,7 @@ angular.module('compuzzDirectives', []).
 				var valid = scope.validateEmail();
 				if (valid === false) {
 					el.find('.email').addClass('error');
-					// el.find('.email-desc')
+					// el.find('.email-avail')
 
 				} else {
 					el.find('.email').removeClass('error');
@@ -81,11 +97,42 @@ angular.module('compuzzDirectives', []).
 
 	}).
 
-	directive('bubbleForm', function(){
+	directive('loginForm', function(){
 		var linkFn = function(scope, el, attr) {
-			scope.$watch('didSent()', function(newVal, oldVal) {
-				if (newVal === true) {
+			scope.$watch('response', function(newVal, oldVal) {
+				if (typeof newVal == 'undefined') return;
+
+				if (newVal == 'serverfault') {
+					el.find('.text-error').html('Server error (it\'s not your fault :P), please try again later.');
+				} else if (newVal == 'clientfault') {
+					el.find('.text-error').html('You have already logged in (nice try :P)');
+				} else if (newVal == 'ok') {
 					el.modal('hide');
+				} else {
+					// Unsupported response code!
+					console.log('Unrecognized response: ' + newVal);
+				}
+			});
+		}
+
+		return linkFn;
+	}).
+
+	directive('eventForm', function(){
+		var linkFn = function(scope, el, attr) {
+			scope.$watch('response', function(newVal, oldVal) {
+				if (newVal === oldVal || newVal == null) return;
+
+				if (newVal == 'serverfault') {
+					scope.errorMsg = 'Server error (not your fault :P), please try again later.';
+				} else if (newVal == 'clientfault') {
+					scope.errorMsg = 'You have to be logged in to create events!';
+				} else if (newVal == 'ok') {
+					el.modal('hide');
+					scope.resetState();
+				} else {
+					// Unsupported response code!
+					console.log('Unrecognized response: ' + newVal);
 				}
 			});
 
@@ -102,7 +149,7 @@ angular.module('compuzzDirectives', []).
 	directive('navbar', ['queryService', function(backend) {
 		var linkFn = function(scope, el, attr) {
 			el.find('.create-event').click(function(){
-				$('#event-form-bubble').modal('show');
+				$('#event-form').modal('show');
 			});
 
 			el.find('.log-in').click(function(){
@@ -113,6 +160,28 @@ angular.module('compuzzDirectives', []).
 				$('#signup-form').modal('show');
 			});
 		};
+
+		return linkFn;
+	}]).
+
+	directive('datePicker', ['$parse', function($parse) {
+		var linkFn = function(scope, el, attrs) {
+			el.find('.datetimepicker').datetimepicker({
+				language: 'en'
+			});
+
+			el.on('changeDate', function(e){
+				var date = el.find('input').val();
+				var model = $parse(attrs.ngModel);
+				scope.$apply(function(){
+					model.assign(scope, date);
+				});
+			});
+
+			el.find('.label').on('click', function(){
+				el.find('.datetimepicker .add-on:last-child').trigger('click');
+			});
+		}
 
 		return linkFn;
 	}]).

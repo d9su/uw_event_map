@@ -10,6 +10,7 @@ angular.module('compuzzControllers', []).
 			$scope.email = '';
 			$scope.response;
 			$scope.nameAvailable;
+			$scope.emailAvailable;
 
 			$scope.validateUsername = function() {
 				var name = $scope.username;
@@ -21,11 +22,11 @@ angular.module('compuzzControllers', []).
 				if (!name.match('^[0-9a-zA-Z_]+$'))
 					return false;
 				// Length must be below 16
-				if (name.length > 16)
+				if (name.length > 16 || name.length < 3)
 					return false;
 
 				// Name must be syntactically valid up until this point, check for uniqueness
-				userService.checkName({username: name}, $scope);
+				userService.checkName(name, $scope);
 			};
 
 			$scope.validatePassword = function() {
@@ -35,16 +36,19 @@ angular.module('compuzzControllers', []).
 					return false;
 				
 				return true;
-			}
+			};
 
 			$scope.validateEmail = function() {
 				var email = $scope.email;
 				// Must be xxx@yyy.zzz
-				if (email.match('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'))
+				if (email.match('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$')) {
+					userService.checkEmail(email, $scope);
 					return true;
-				else
+				} else {
 					return false;
-			}
+				}
+
+			};
 
 			$scope.submitCredential = function() {
 				var params = {
@@ -106,10 +110,10 @@ angular.module('compuzzControllers', []).
 
 	controller('CreateEventController', ['$scope', 'createEventService', 'tagSearchService', 
 		function($scope, newEvent, tagSearch){
-			$scope.sent = false;
-			$scope.newEvent = newEvent;
 			$scope.errorMsg = "";
-			$scope.eventDetail = { name: '', desc: '', type: 'info', tags: [] };
+			$scope.eventDetail = { name: '', desc: '', type: 'info', tags: [], start: '', end: '' };
+			$scope.response = null;
+
 			$scope.remaining = function() {
 				var msg = '';
 				var remainingChars = 250 - $scope.eventDetail.desc.length;
@@ -122,38 +126,40 @@ angular.module('compuzzControllers', []).
 
 			$scope.setEventType = function(type) {
 				$scope.eventDetail.type = type;
-			}
+			};
 
 			$scope.createEvent = function() {
 				// Add additional form validation if necessary
 				if ($scope.eventDetail.name == "" || $scope.eventDetail.desc == "") {
-					$scope.errorMsg = "Event name and desciption cannot be empty."
+					$scope.errorMsg = 'Event name and description cannot be empty.'
 					return;
 
 				} else if ($scope.eventDetail.desc.length > 250) {
-					$scope.errorMsg = "Description is too long."
+					$scope.errorMsg = 'Description is too long.'
 					return;
+
+				} else if ($scope.eventDetail.start == '' || $scope.eventDetail.end == '') {
+					$scope.errorMsg = 'Event date cannot be empty.'
+					return;
+
+				} else {
+					var start = new Date($scope.eventDetail.start);
+					var end = new Date($scope.eventDetail.end);
+					if (start > end) {
+						$scope.errorMsg = 'Date range is invalid.'
+						return;
+					}
 				}
 
 				// Add additional data transformation
 				newEvent.batchSet($scope.eventDetail);
-				newEvent.save();
-				$scope.resetState();
-				$scope.sent = true;
-			};
-
-			$scope.didSent = function() {
-				if ($scope.sent) {
-					$scope.sent = false;
-					return true;
-				}
-
-				return false;
+				newEvent.save($scope);
 			};
 
 			$scope.resetState = function() {
 				$scope.errorMsg = "";
-				$scope.eventDetail = { name: '', desc: '', type: 'info', tags: [] };
+				$scope.eventDetail = { name: '', desc: '', type: 'info', tags: [], start: '', end: '' };
+				$scope.response = null;
 			};
 
 			$scope.getMatchedTags = function() {
@@ -165,6 +171,6 @@ angular.module('compuzzControllers', []).
 
 	controller('MapController', ['$scope', 'mapService',
 		function($scope, map){
-			// map.initRender(document.getElementById('map_canvas'));
+			map.initRender(document.getElementById('map_canvas'));
 		}
 	]);
