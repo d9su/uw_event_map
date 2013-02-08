@@ -101,26 +101,6 @@ exports.select = function(table, query, constraints, callback) {
 	c.query('SELECT ? FROM ' + tableName + ' WHERE ? ', query, constraints, callback(err, result));
 };
 
-exports.saveCredentials = function(req, res, next) {
-	var username = c.escape(req.body.username);
-	var email = c.escape(req.body.email);
-	var password_h = c.escape(req.body.password);	// Hashed password
-	var salt = c.escape(req.body.salt);
-	
-	c.query('INSERT INTO user (`user_name`, `email`, `hash`, `salt`, `register_at`, `last_visit_at`) \
-				VALUES ('+username+', '+email+', '+password_h+', '+salt+', NOW(), NOW())',
-				function(err, rows, fields){
-					if (!err) {
-						next();
-
-					} else {
-						console.log(err);
-						res.send('serverfault');
-						res.send(500);
-					}
-				});
-};
-
 exports.fetchTags = function(req, res) {
 	var matchString = c.escape('%' + req.query['match'] + '%');
 	c.query('SELECT * FROM event_tag WHERE tag_name LIKE ' + matchString + ' OR tag_desc LIKE ' + matchString + '',
@@ -137,51 +117,3 @@ exports.fetchTags = function(req, res) {
 	);
 };
 
-exports.getEvents = function(req, res) {
-
-};
-
-exports.createEvent = function(req, res) {
-	var id = c.escape(req.body.id),
-		name = c.escape(req.body.name),
-		type = c.escape(req.body.type),
-		date = c.escape(req.body.date),
-		desc = c.escape(req.body.desc),
-		tags = c.escape(req.body.tags);
-	console.log(req.body);
-	date = 100;
-
-	var typeQuery = c.query('SELECT id FROM event_type WHERE type_name = ' + type);
-	typeQuery.
-		on('result', function(row){
-			// Found a supported event type
-			if (row!={} && row!=null) {
-				c.query('INSERT INTO event_info (`name`, `type`, `date`, `desc`) VALUES ('+name+', '+row.id+', '+date+', '+desc+')',
-					function(err, rows, fields) {
-						if (!err) {
-							res.send(200, 'ok');
-						} else {
-							console.log(err);
-							res.send(500, 'serverfault');
-						}
-					}
-				);
-
-			// Unsupported event type
-			} else {
-				res.send(403, 'badtype');
-			}
-		}).
-		on('error', function(error){
-			console.log(error);
-			res.send(500, 'serverfault');
-		});
-};
-
-exports.updateEvent = function(req, res){
-
-};
-
-exports.deleteEvent = function(req, res){
-
-};

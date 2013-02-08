@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"background",
+				"background-color"
+			],
+			[
+				"border-rad",
+				"border-top-left-radius"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"margin-",
+				"margin-left"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"date",
+				"date-display"
+			],
+			[
+				"event",
+				"eventDetail"
+			],
+			[
+				"e",
+				"e"
+			],
+			[
+				"ng",
+				"ng-model"
+			],
+			[
+				"pull",
+				"pull-right"
+			],
+			[
+				"boo",
+				"bootstrap-datetimepicker"
+			],
+			[
 				"user",
 				"username"
 			],
@@ -100,24 +144,12 @@
 				"remaining"
 			],
 			[
-				"margin",
-				"margin-top"
-			],
-			[
 				"no",
 				"no-repeat"
 			],
 			[
-				"background",
-				"background-repeat"
-			],
-			[
 				"remain",
 				"remainingChars"
-			],
-			[
-				"margin-",
-				"margin-top"
 			],
 			[
 				"text",
@@ -198,10 +230,6 @@
 			[
 				"font-",
 				"font-size"
-			],
-			[
-				"event",
-				"eventInfoHandler"
 			],
 			[
 				"even",
@@ -328,98 +356,26 @@
 	"buffers":
 	[
 		{
-			"file": "compuzz.js",
+			"file": "/home/rex/workspace/myplanet/savvis_iaas/view/firewall-widget.html",
 			"settings":
 			{
-				"buffer_size": 984,
+				"buffer_size": 3580,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "routes.js",
+			"file": "/home/rex/workspace/myplanet/savvis_iaas/css/widget.less",
 			"settings":
 			{
-				"buffer_size": 931,
+				"buffer_size": 2327,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "routes/mainHandler.js",
+			"file": "/home/rex/workspace/myplanet/savvis_iaas/index.html",
 			"settings":
 			{
-				"buffer_size": 270,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "routes/user.js",
-			"settings":
-			{
-				"buffer_size": 2796,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "routes/database.js",
-			"settings":
-			{
-				"buffer_size": 4794,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/js/services.js",
-			"settings":
-			{
-				"buffer_size": 7826,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/js/controllers.js",
-			"settings":
-			{
-				"buffer_size": 4028,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/js/directives.js",
-			"settings":
-			{
-				"buffer_size": 4968,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/partials/signup-form.jade",
-			"settings":
-			{
-				"buffer_size": 1247,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/partials/event-form.jade",
-			"settings":
-			{
-				"buffer_size": 1824,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/partials/login-form.jade",
-			"settings":
-			{
-				"buffer_size": 639,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/css/style.styl",
-			"settings":
-			{
-				"buffer_size": 5238,
+				"buffer_size": 237,
 				"line_ending": "Unix"
 			}
 		},
@@ -428,6 +384,14 @@
 			"settings":
 			{
 				"buffer_size": 1037,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/layout.jade",
+			"settings":
+			{
+				"buffer_size": 714,
 				"line_ending": "Unix"
 			}
 		}
@@ -484,6 +448,28 @@
 	},
 	"file_history":
 	[
+		"/home/rex/workspace/myplanet/savvis_iaas/css/cloud-solution-widget.less",
+		"/home/rex/workspace/myplanet/savvis_iaas/css/firewall-widget.less",
+		"/home/rex/workspace/myplanet/savvis_iaas/view/cloud-solution-widget.html",
+		"/home/rex/workspace/myplanet/savvis_iaas/css/widget.css",
+		"/home/rex/workspace/myplanet/savvis_iaas/view/widget.less",
+		"/home/rex/workspace/map_project/uw_event_map/views/layout.jade",
+		"/home/rex/workspace/map_project/uw_event_map/views/index.jade",
+		"/home/rex/workspace/map_project/uw_event_map/views/partials/login-form.jade",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/map.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/css/style.styl",
+		"/home/rex/workspace/map_project/uw_event_map/views/partials/signup-form.jade",
+		"/home/rex/workspace/map_project/uw_event_map/views/partials/event-form.jade",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/lib/bootstrap-datetimepicker.min.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/controllers.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/directives.js",
+		"/home/rex/workspace/map_project/uw_event_map/public/js/services.js",
+		"/home/rex/workspace/map_project/uw_event_map/routes/database.js",
+		"/home/rex/workspace/map_project/uw_event_map/routes/event.js",
+		"/home/rex/workspace/map_project/uw_event_map/routes/user.js",
+		"/home/rex/workspace/map_project/uw_event_map/routes.js",
+		"/home/rex/workspace/map_project/uw_event_map/compuzz.js",
+		"/home/rex/workspace/map_project/uw_event_map/routes/mainHandler.js",
 		"/home/rex/workspace/map_project/uw_event_map/public/js/app.js",
 		"/home/rex/workspace/map_project/uw_event_map/routes/eventInfoHandler.js",
 		"/home/rex/workspace/map_project/uw_event_map/views/signup-form.jade",
@@ -491,11 +477,8 @@
 		"/home/rex/workspace/map_project/uw_event_map/views/event-form-bubble.jade",
 		"/home/rex/workspace/map_project/uw_event_map/views/auth-form.jade",
 		"/home/rex/workspace/map_project/uw_event_map/package.json",
-		"/home/rex/workspace/map_project/uw_event_map/public/js/map.js",
-		"/home/rex/workspace/map_project/uw_event_map/routes/database.js",
 		"/home/rex/workspace/map_project/uw_event_map/public/js/login.js",
 		"/home/rex/workspace/map_project/uw_event_map/views/login-progress.jade",
-		"/home/rex/workspace/map_project/uw_event_map/routes/mainHandler.js",
 		"/home/rex/workspace/map_project/uw_event_map/routes/kinvey.js",
 		"/usr/local/tomcat/webapps/examples/jsp/cloud3/usersVDC.jsp",
 		"/usr/local/tomcat/webapps/examples/jsp/cloud3/firewalls.jsp",
@@ -508,21 +491,12 @@
 		"/usr/local/tomcat/webapps/examples/jsp/cloud3/index.jsp",
 		"/usr/local/tomcat/webapps/examples/jsp/cloud3/dimka.jsp",
 		"/home/rex/workspace/map_project/uw_event_map/map.sublime-project",
-		"/home/rex/workspace/map_project/uw_event_map/routes.js",
-		"/home/rex/workspace/map_project/uw_event_map/views/layout.jade",
-		"/home/rex/workspace/map_project/uw_event_map/public/css/style.styl",
-		"/home/rex/workspace/map_project/uw_event_map/views/index.jade",
-		"/home/rex/workspace/map_project/uw_event_map/public/js/controllers.js",
-		"/home/rex/workspace/map_project/uw_event_map/public/js/services.js",
-		"/home/rex/workspace/map_project/uw_event_map/public/js/directives.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/services.js",
-		"/home/rex/workspace/map_project/uw_event_map/compuzz.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/partials/phone-list.html",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/scripts/web-server.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/app.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/js/controllers.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/phones/dell-streak-7.json",
-		"/home/rex/workspace/map_project/uw_event_map/routes/user.js",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/index.html",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/app/partials/phone-detail.html",
 		"/home/rex/workspace/myplanet/angular/tut/angular-phonecat/test/unit/controllersSpec.js",
@@ -605,6 +579,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"createEvent",
+			"second",
+			"event-form-bubble",
+			"user.fetch",
+			"db.User",
+			"');\n",
 			");\n",
 			"dbService",
 			"vdc_details_toolbar",
@@ -656,57 +636,55 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "compuzz.js",
+					"file": "/home/rex/workspace/myplanet/savvis_iaas/view/firewall-widget.html",
 					"settings":
 					{
-						"buffer_size": 984,
+						"buffer_size": 3580,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								514,
-								514
+								2285,
+								2285
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 153.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "routes.js",
+					"file": "/home/rex/workspace/myplanet/savvis_iaas/css/widget.less",
 					"settings":
 					{
-						"buffer_size": 931,
+						"buffer_size": 2327,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								495,
-								495
+								2000,
+								2000
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -716,23 +694,23 @@
 				},
 				{
 					"buffer": 2,
-					"file": "routes/mainHandler.js",
+					"file": "/home/rex/workspace/myplanet/savvis_iaas/index.html",
 					"settings":
 					{
-						"buffer_size": 270,
+						"buffer_size": 237,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								246,
-								246
+								33,
+								33
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -742,250 +720,6 @@
 				},
 				{
 					"buffer": 3,
-					"file": "routes/user.js",
-					"settings":
-					{
-						"buffer_size": 2796,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								943,
-								943
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 301.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "routes/database.js",
-					"settings":
-					{
-						"buffer_size": 4794,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1295,
-								1295
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 255.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "public/js/services.js",
-					"settings":
-					{
-						"buffer_size": 7826,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1274,
-								1274
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 110.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "public/js/controllers.js",
-					"settings":
-					{
-						"buffer_size": 4028,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1300,
-								1300
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 255.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "public/js/directives.js",
-					"settings":
-					{
-						"buffer_size": 4968,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2491,
-								2491
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "views/partials/signup-form.jade",
-					"settings":
-					{
-						"buffer_size": 1247,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								449,
-								449
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "views/partials/event-form.jade",
-					"settings":
-					{
-						"buffer_size": 1824,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								203,
-								203
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 306.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "views/partials/login-form.jade",
-					"settings":
-					{
-						"buffer_size": 639,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								40,
-								40
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "public/css/style.styl",
-					"settings":
-					{
-						"buffer_size": 5238,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								550,
-								550
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Stylus/Stylus.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 19.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
 					"file": "views/index.jade",
 					"settings":
 					{
@@ -996,8 +730,35 @@
 						"selection":
 						[
 							[
-								243,
-								243
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/layout.jade",
+					"settings":
+					{
+						"buffer_size": 714,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								275,
+								275
 							]
 						],
 						"settings":
