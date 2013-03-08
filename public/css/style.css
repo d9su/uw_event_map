@@ -8,10 +8,18 @@ body {
 .ib {
   display: inline-block !important;
 }
+.navbar {
+  margin-bottom: 0px !important;
+}
+.navbar .account,
+.navbar .log-out,
+.navbar .event-opts {
+  display: none;
+}
 .navbar-inner {
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
 }
 input.error {
   border-color: #e60000 !important;
@@ -22,6 +30,13 @@ input.error {
 input + .misc-desc {
   margin-top: -8px;
   margin-bottom: 10px;
+}
+.alert {
+  text-align: center;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+  display: none;
 }
 #event-form .event-type-selection-toggle {
   margin: 0;
@@ -76,6 +91,8 @@ input + .misc-desc {
 #event-form .datetimepicker .add-on:last-child {
   -webkit-border-radius: 4px !important;
   -moz-border-radius: 4px !important;
+  -webkit-border-radius: 4px !important;
+  -moz-border-radius: 4px !important;
   border-radius: 4px !important;
   cursor: pointer;
 }
@@ -86,11 +103,12 @@ input + .misc-desc {
   margin-bottom: 0px;
 }
 #event-form .desc {
+  height: 272px;
   color: #666;
   border-left: 1px solid #c2c2c2;
   padding: 10px 0 10px 20px;
   margin-left: 10px;
-  margin-top: 20px;
+  margin-top: 14px;
 }
 #event-form .desc p + p {
   margin-top: 30px;
@@ -100,6 +118,10 @@ input + .misc-desc {
   font-size: 0.9em;
   color: #7c7c7c;
   display: block;
+}
+#notification {
+  height: 60px;
+  width: 100%;
 }
 #map_canvas {
   height: 700px;

@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('compuzzDirectives', []).
-	directive('signupForm', function(){
+	directive('signupForm', ['notificationService', function(notify){
 		var linkFn = function(scope, el, attr) {
 			scope.$watch('response', function(newVal, oldVal) {
-				if (oldVal === newVal) return;
+				if (oldVal === newVal || newVal == null) return;
 
 				if (newVal == 'serverfault') {
 					scope.errorMsg = 'Server error (it\'s not your fault :P), please try again later.';
@@ -16,6 +16,9 @@ angular.module('compuzzDirectives', []).
 					// Unsupported response code!
 					console.log('Unrecognized response: ' + newVal);
 				}
+
+				// Reset response
+				scope.response = null;
 			});
 
 			scope.$watch('nameAvailable', function(newVal, oldVal) {
@@ -95,12 +98,12 @@ angular.module('compuzzDirectives', []).
 
 		return linkFn;
 
-	}).
+	}]).
 
 	directive('loginForm', function(){
 		var linkFn = function(scope, el, attr) {
 			scope.$watch('response', function(newVal, oldVal) {
-				if (typeof newVal == 'undefined') return;
+				if (newVal === oldVal || newVal == null) return;
 
 				if (newVal == 'serverfault') {
 					el.find('.text-error').html('Server error (it\'s not your fault :P), please try again later.');
@@ -112,6 +115,9 @@ angular.module('compuzzDirectives', []).
 					// Unsupported response code!
 					console.log('Unrecognized response: ' + newVal);
 				}
+
+				// Reset response
+				scope.response = null;
 			});
 		}
 
@@ -146,7 +152,7 @@ angular.module('compuzzDirectives', []).
 		return linkFn;
 	}).
 
-	directive('navbar', ['queryService', function(backend) {
+	directive('navbar', function() {
 		var linkFn = function(scope, el, attr) {
 			el.find('.create-event').click(function(){
 				$('#event-form').modal('show');
@@ -159,10 +165,55 @@ angular.module('compuzzDirectives', []).
 			el.find('.sign-up').click(function(){
 				$('#signup-form').modal('show');
 			});
+
+			scope.$watch('userInfo.getUserName()', function(newVal, oldVal) {
+				if (newVal != '') {
+					el.find('.sign-up').hide();
+					el.find('.log-in').hide();
+					el.find('.account').text(newVal).show();
+					el.find('.log-out').show();
+					el.find('.event-opts').show();
+
+				} else {
+					el.find('.sign-up').show();
+					el.find('.log-in').show();
+					el.find('.account').hide();
+					el.find('.log-out').hide();
+					el.find('.event-opts').hide();
+
+				}
+
+
+			});
 		};
 
 		return linkFn;
-	}]).
+	}).
+
+	directive('notification', function(){
+		var linkFn = function(scope, el, arrt) {
+			el.find('.close').click(function(){
+				el.fadeOut('slow')
+			});
+
+			scope.$watch('notify.msg', function(newVal, oldVal) {
+				if (newVal === oldVal) return;
+
+				else {
+					el.fadeOut('slow', function(){
+						el.find('span').text(newVal);
+						el.removeClass('alert-success alert-error alert-warning');
+						el.addClass('alert-'+scope.notify.status);
+						el.fadeIn('slow');
+					});
+				}
+
+			});
+		}
+
+		return linkFn;
+
+	}).
 
 	directive('datePicker', ['$parse', function($parse) {
 		var linkFn = function(scope, el, attrs) {

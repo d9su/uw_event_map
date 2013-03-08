@@ -355,55 +355,23 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/home/rex/workspace/myplanet/savvis_iaas/view/firewall-widget.html",
-			"settings":
-			{
-				"buffer_size": 3580,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rex/workspace/myplanet/savvis_iaas/css/widget.less",
-			"settings":
-			{
-				"buffer_size": 2327,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rex/workspace/myplanet/savvis_iaas/index.html",
-			"settings":
-			{
-				"buffer_size": 237,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/index.jade",
-			"settings":
-			{
-				"buffer_size": 1037,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/layout.jade",
-			"settings":
-			{
-				"buffer_size": 714,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 54.0,
+		"height": 47.0,
 		"selected_items":
 		[
 			[
 				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"jade",
+				"Set Syntax: Jade"
+			],
+			[
+				"package",
 				"Package Control: Install Package"
 			],
 			[
@@ -431,7 +399,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 467.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -448,6 +416,15 @@
 	},
 	"file_history":
 	[
+		"/Users/rexsu/workplace/map_project/uw_event_map/db/db_create.txt",
+		"/Users/rexsu/workplace/map_project/uw_event_map/views/partials/login-form.jade",
+		"/Users/rexsu/workplace/map_project/uw_event_map/views/partials/event-form.jade",
+		"/Users/rexsu/workplace/map_project/uw_event_map/node_modules/.bin/jade",
+		"/Users/rexsu/workplace/map_project/uw_event_map/views/layout.jade",
+		"/Users/rexsu/workplace/map_project/uw_event_map/views/index.jade",
+		"/home/rex/workspace/myplanet/savvis_iaas/index.html",
+		"/home/rex/workspace/myplanet/savvis_iaas/css/widget.less",
+		"/home/rex/workspace/myplanet/savvis_iaas/view/firewall-widget.html",
 		"/home/rex/workspace/myplanet/savvis_iaas/css/cloud-solution-widget.less",
 		"/home/rex/workspace/myplanet/savvis_iaas/css/firewall-widget.less",
 		"/home/rex/workspace/myplanet/savvis_iaas/view/cloud-solution-widget.html",
@@ -568,7 +545,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 			""
@@ -636,142 +613,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/home/rex/workspace/myplanet/savvis_iaas/view/firewall-widget.html",
-					"settings":
-					{
-						"buffer_size": 3580,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2285,
-								2285
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/rex/workspace/myplanet/savvis_iaas/css/widget.less",
-					"settings":
-					{
-						"buffer_size": 2327,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2000,
-								2000
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/rex/workspace/myplanet/savvis_iaas/index.html",
-					"settings":
-					{
-						"buffer_size": 237,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								33,
-								33
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/index.jade",
-					"settings":
-					{
-						"buffer_size": 1037,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "views/layout.jade",
-					"settings":
-					{
-						"buffer_size": 714,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								275,
-								275
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -816,6 +659,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"jade",
+				"node_modules/.bin/jade"
+			],
 			[
 				"base.html",
 				"templates/public/base.html"

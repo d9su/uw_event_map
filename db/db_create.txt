@@ -2,6 +2,7 @@ delimiter $$
 
 CREATE DATABASE `compuzz` /*!40100 DEFAULT CHARACTER SET latin1 */$$
 
+USE compuzz$$
 
 delimiter $$
 

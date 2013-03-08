@@ -1,3 +1,6 @@
+@import 'global'
+
+// Global
 body
   background-color black !important
   font-family "Helvetica Neue", "Helvetica", "Arial", sans-serif
@@ -8,10 +11,18 @@ body
 .ib
   display inline-block !important
 
+.navbar
+  margin-bottom 0px !important
+
+.navbar .account,
+.navbar .log-out,
+.navbar .event-opts
+  display none
+
+
 .navbar-inner
-  -webkit-border-radius 0 !important
-  -moz-border-radius 0 !important
-  border-radius 0 !important
+  border-radius(0px) !important
+  
 
 input.error
   border-color #e60000 !important
@@ -22,6 +33,12 @@ input.error
 input + .misc-desc
   margin-top -8px
   margin-bottom 10px
+
+.alert
+  text-align center
+  border-radius(0px)
+  display none
+
 
 // .datetimepicker + .datetimepicker
 //   margin-bottom 30px
@@ -117,11 +134,12 @@ input + .misc-desc
   margin-bottom 0px
 
 #event-form .desc
+  height 272px
   color #666
   border-left 1px solid #c2c2c2
   padding 10px 0 10px 20px
   margin-left 10px
-  margin-top 20px
+  margin-top 14px
 
 #event-form .desc p + p
   margin-top 30px
@@ -131,6 +149,10 @@ input + .misc-desc
   font-size 0.9em
   color #7c7c7c
   display block
+
+
+#notification { height: 60px; width: 100%; }
+
 
 #map_canvas { height: 700px; display: inline-block; width: 100%; }
 

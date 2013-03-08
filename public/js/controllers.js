@@ -74,7 +74,7 @@ angular.module('compuzzControllers', []).
 			$scope.errorMsg = '';
 			$scope.username = '';
 			$scope.password = '';
-			$scope.responseCode;
+			$scope.response;
 
 			$scope.submitCredential = function() {
 				var params = {
@@ -100,11 +100,17 @@ angular.module('compuzzControllers', []).
 		}
 	]).
 
-	controller('NavBarController', ['$scope', 'tagSearchService',
-		function($scope, tagSearch){
+	controller('NavBarController', ['$scope', 'tagSearchService', 'userInfoService',
+		function($scope, tagSearch, user){
 			$scope.getMatchedTags = function() {
 				return tagSearch.getTags();
 			};
+
+			$scope.logout = function() {
+				user.logout($scope);
+			};
+
+			$scope.userInfo = user;
 		}
 	]).
 
@@ -166,6 +172,12 @@ angular.module('compuzzControllers', []).
 				return tagSearch.getTags();
 			};
 
+		}
+	]).
+
+	controller('NotificationController', ['$scope', 'notificationService',
+		function($scope, notify) {
+			$scope.notify = notify;
 		}
 	]).
 

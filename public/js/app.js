@@ -1,7 +1,7 @@
 'use strict';
 
 /* App Module */
-angular.module('compuzz', ['compuzzControllers', 'compuzzServices', 'compuzzDirectives']);
+angular.module('compuzz', ['ui.bootstrap', 'compuzzControllers', 'compuzzServices', 'compuzzDirectives']);
 	// config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	//  	$routeProvider.
 	// 		when('/login', { templateUrl: '/partials/login-form', controller: 'LoginController' }).

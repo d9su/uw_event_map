@@ -3,12 +3,27 @@
 angular.module('compuzzServices', ['ngResource']).
 
 	/**
+	 *	Global Notification
+	 *	Contains information of a global notification, notification getter and setter should
+	 *	
+	 */
+	service('notificationService', function($http) {
+
+		return {
+			msgContent: '',
+			msgStatus: '' // (success, error, warning)
+		};
+
+	}).
+
+
+	/**
 	 *	User Info
 	 *	Contains user identity info and methods for auth operations
 	 */
-	service('userInfoService', ['$http', function($http) {
-		var username;
-		var email;
+	service('userInfoService', ['$http', 'notificationService', function($http, notify) {
+		var username = '';
+		var email = '';
 		var filterTags = [];
 
 		var checkName = function(name, scope) {
@@ -51,6 +66,9 @@ angular.module('compuzzServices', ['ngResource']).
 					scope.response = 'ok';
 					username = params.username;
 					email = params.email;
+					notify.msg = 'Signup successful, you are now automatically logged in :).';
+					notify.status = 'success';
+
 				}).
 				error(function(data, status, headers, config) {
 					if (status >= 400 && status < 500)
@@ -60,12 +78,32 @@ angular.module('compuzzServices', ['ngResource']).
 				});
 		};
 
+		var userLogout = function(scope) {
+			$http.post('/user/logout').
+				success(function(data, status, headers, config) {
+					scope.response = 'ok';
+					username = '';
+					email = '';
+					notify.msg = 'You have successfully logged out. Hope you check back soon. :P';
+					notify.status = 'success';
+					
+				}).
+				error(function(data, status, headers, config) {
+					if (status >= 400 && status < 500)
+						scope.response = 'clientfault';
+					else if (status >= 500)
+						scope.response = 'serverfault';
+				});
+		}
+
 		var userLogin = function(params, scope) {
 			$http.post('/user/login', params).
 				success(function(data, status, headers, config) {
 					scope.response = 'ok';
 					username = params.username;
 					email = params.email;
+					notify.msg = 'Login successful, welcome back ' + username + '! :D';
+					notify.status = 'success';
 				}).
 				error(function(data, status, headers, config) {
 					console.log(status);
@@ -86,6 +124,7 @@ angular.module('compuzzServices', ['ngResource']).
 
 			signup: userSignup,
 			login: userLogin,
+			logout: userLogout,
 			checkName: checkName,
 			checkEmail: checkEmail
 		};

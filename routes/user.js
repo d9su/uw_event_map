@@ -158,5 +158,11 @@ exports.login = function(req, res, next) {
 			res.send(500, 'serverfault');
 		}
 	});
+}
 
+// Logout
+exports.logout = function(req, res) {
+	req.session.username = undefined;
+	req.session.email = undefined;
+	res.send(200, 'ok');
 }

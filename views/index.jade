@@ -12,8 +12,12 @@ block content
 					a.sign-up Sign Up
 				li
 					a.log-in Log In
+				li
+					a.account user
+				li
+					a.log-out(ng-click='logout()') Log Out
 
-			.btn-group.pull-left
+			.btn-group.pull-left.event-opts
 				button.btn.btn-primary.create-event Create Event
 				button.btn.btn-primary.dropdown-toggle(data-toggle='dropdown', href='#')
 					span.caret
@@ -25,6 +29,11 @@ block content
 
 			form.navbar-form.pull-right
 				input.span9(tag-search, ng-model='matchString', type='text', placeHolder='Search for Tags')
+
+	#notification(ng-controller='NotificationController')
+		.alert.alert-success(notification)
+			button(type='button', class='close') &times;
+			span Best check yo self, you're not looking too good.
 
 	//- .container
 		//- .left_sidepanel(ng-controller='TagListController')
